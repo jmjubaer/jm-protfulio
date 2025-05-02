@@ -1,24 +1,11 @@
-import Banner from "@/components/pages/home/Banner";
-import About from "@/components/pages/home/About";
-import Skill from "@/components/pages/home/Skill";
-import Service from "@/components/pages/home/Service";
-import Projects from "@/components/pages/home/Projects";
-import Contact from "@/components/pages/home/Contact";
-import EducationAndExperience from "@/components/pages/home/EducationAndExperience";
+"use client";
+import dynamic from "next/dynamic";
 
-
+const HomeComponent = dynamic(() => import("../components/pages/home/index"), {
+    ssr: false,
+});
 const HomePage = () => {
-    return (
-        <div className="overflow-hidden">
-            <Banner />
-            <About />
-            <Skill />
-            <Service />
-            <Projects />
-            <EducationAndExperience/>
-            <Contact />
-        </div>
-    );
+    return <HomeComponent />;
 };
 
 export default HomePage;

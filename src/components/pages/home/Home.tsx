@@ -1,6 +1,6 @@
 import About from "./About";
 import Banner from "./Banner";
-import Contact from "./Contact";
+import Contact from "./contact";
 import Projects from "./Projects";
 import Service from "./Service";
 import Skill from "./Skill";
@@ -8,12 +8,12 @@ import Skill from "./Skill";
 const Home = () => {
     return (
         <div>
-            <Banner/>
-            <About/>
-            <Skill/>
-            <Service/>
-            <Projects/>
-            <Contact/>
+            <Banner />
+            <About />
+            <Skill />
+            <Service />
+            <Projects />
+            <Contact />
         </div>
     );
 };
