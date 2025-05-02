@@ -52,7 +52,7 @@ html{
       4px 4px 10px rgba(0, 0, 0, 0.1), inset 4px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .border_gradient {
-  border-image: linear-gradient(to right, red, blue) 1;
+  border-image: linear-gradient(to left, red, blue) 1;
 }
 .bg_gradient {
   background: linear-gradient(

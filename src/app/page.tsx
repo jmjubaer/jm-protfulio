@@ -4,6 +4,7 @@ import Skill from "@/components/pages/home/Skill";
 import Service from "@/components/pages/home/Service";
 import Projects from "@/components/pages/home/Projects";
 import Contact from "@/components/pages/home/Contact";
+import EducationAndExperience from "@/components/pages/home/EducationAndExperience";
 
 
 const HomePage = () => {
@@ -14,6 +15,7 @@ const HomePage = () => {
             <Skill />
             <Service />
             <Projects />
+            <EducationAndExperience/>
             <Contact />
         </div>
     );
