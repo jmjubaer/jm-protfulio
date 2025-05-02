@@ -1,9 +1,8 @@
+html{
+  scroll-behavior: smooth
+}
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -12,15 +11,67 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.jm_container {
+  width: 96%;
+  max-width: 1240px;
+  margin: auto;
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.logo_font {
+  font-family: "Rubik Moonrocks", cursive;
+}
+.jm_nav {
+  @apply block lg:flex justify-between lg:col-span-3 items-center absolute lg:static lg:w-auto top-0 left-0 overflow-hidden h-screen lg:h-auto duration-500 bg-[#fff] lg:bg-[transparent] lg:p-0 z-50;
+}
+.gradient_text {
+  background: linear-gradient(
+      123deg,
+      #1c99fe 20.69%,
+      #7644ff 50.19%,
+      #fd4766 79.69%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.freme {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+.box_shadow {
+  box-shadow: 50px 50px 50px 50px #1c99fe;
+}
+.heading_font {
+  font-family: "Belanosima", sans-serif;
+}
+.jm_special_font {
+  font-family: "Noto Serif", serif;
+}
+.dics_effects {
+  box-shadow: -4px -4px 10px rgba(255, 255, 255, 1),
+      inset -4px -4px 10px rgba(255, 255, 255, 1),
+      4px 4px 10px rgba(0, 0, 0, 0.1), inset 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.border_gradient {
+  border-image: linear-gradient(to right, red, blue) 1;
+}
+.bg_gradient {
+  background: linear-gradient(
+      -30deg,
+      #1c99fe 20.69%,
+      #7644ff 50.19%,
+      #fd4766 79.69%
+  );
+}
+.jm_child {
+  transition: all 5s ease-in-out;
+}
+.jm_parent:hover .jm_child {
+  transform: translateY(calc(-100% + 312px));
+}
+.jm_parent .overly {
+  transition: all linear 0.5s;
+}
+.jm_parent:hover .overly {
+  bottom: 0;
+  transition: all linear 0.5s;
 }
