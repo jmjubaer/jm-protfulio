@@ -1,21 +1,24 @@
-// import About from "./About";
-// import Banner from "./Banner";
-// import Contact from "./contact";
-// import Projects from "./Projects";
-// import Service from "./Service";
-// import Skill from "./Skill";
+"use client";
+import About from "@/components/pages/home/About";
+import Banner from "@/components/pages/home/banner/index.";
+import Contact from "@/components/pages/home/contact";
+import EducationAndExperience from "@/components/pages/home/EducationAndExperience";
+import Projects from "@/components/pages/home/Projects";
+import Service from "@/components/pages/home/Service";
+import Skill from "@/components/pages/home/Skill";
 
-// const Home = () => {
-//     return (
-//         <div>
-//             <Banner />
-//             <About />
-//             <Skill />
-//             <Service />
-//             <Projects />
-//             <Contact />
-//         </div>
-//     );
-// };
+const HomePage = () => {
+    return (
+        <div className='overflow-hidden'>
+            <Banner />
+            <About />
+            <Skill />
+            <Service />
+            <Projects />
+            <EducationAndExperience />
+            <Contact />
+        </div>
+    );
+};
 
-// export default Home;
+export default HomePage;

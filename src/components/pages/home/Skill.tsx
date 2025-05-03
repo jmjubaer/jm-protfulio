@@ -8,10 +8,19 @@ import SectionTitle from "@/components/shered/SectionTitle";
 import CountUp from "react-countup";
 import { TSkill } from "@/types/skill.type";
 import Link from "next/link";
-type TProps = {
-    skills: TSkill[];
-};
-const Skill = ({ skills }: TProps) => {
+import { useEffect, useState } from "react";
+import { getSkills } from "@/services/skillServices";
+
+const Skill = () => {
+    const [skills, setSkills] = useState<TSkill[] | null>(null);
+    useEffect(() => {
+        (async () => {
+            const data = await getSkills();
+            if (data.success) {
+                setSkills(data.data);
+            }
+        })();
+    }, []);
     return (
         <div className='pt-28 jm_container'>
             <SectionTitle

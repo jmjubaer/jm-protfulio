@@ -50,7 +50,6 @@ const Projects = ({
         })();
     }, [technology, page, searchTerm]);
 
-
     const contentRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         if (contentRef.current) {
@@ -139,21 +138,14 @@ const Projects = ({
                             {/* Product section */}
                             <div className='mb-5'>
                                 {projects && projects?.length > 0 ? (
-                                    Array(3)
-                                        .fill(projects[0])
-                                        ?.map(
-                                            (
-                                                project: TProject,
-                                                idx: number
-                                            ) => (
-                                                <ProjectCard
-                                                    key={idx}
-                                                    idx={idx}
-                                                    project={
-                                                        project
-                                                    }></ProjectCard>
-                                            )
+                                    projects?.map(
+                                        (project: TProject, idx: number) => (
+                                            <ProjectCard
+                                                key={idx}
+                                                idx={idx}
+                                                project={project}></ProjectCard>
                                         )
+                                    )
                                 ) : (
                                     <div className='text-gray-400 text-2xl text-center col-span-3 my-20 mt-40'>
                                         Project adding soon...
