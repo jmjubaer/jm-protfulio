@@ -15,8 +15,22 @@ export const getAllProjects = async (queryParams?: TQueryParam[]) => {
         const baseUrl = `${process.env.NEXT_PUBLIC_BASE_API}/projects`;
         const fullUrl = queryString ? `${baseUrl}?${queryString}` : baseUrl;
         const res = await fetch(fullUrl, {
-            cache: "force-cache",
+            cache: "no-cache",
         });
+        const result = await res.json();
+        return result;
+    } catch (error: any) {
+        return Error(error);
+    }
+};
+export const getSingleProjects = async (id: string) => {
+    try {
+        const res = await fetch(
+            `${process.env.NEXT_PUBLIC_BASE_API}/projects/${id}`,
+            {
+                cache: "no-cache",
+            }
+        );
         const result = await res.json();
         return result;
     } catch (error: any) {

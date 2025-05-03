@@ -5,7 +5,10 @@ import Image from "next/image";
 import SectionTitle from "@/components/shered/SectionTitle";
 import { TProject } from "@/types/project.type";
 import ProjectCard from "@/components/ui/ProjectCard";
-const Projects = ({ projects }: { projects: TProject[] }) => {
+type TProps = {
+    projects: TProject[];
+};
+const Projects = ({ projects }: TProps) => {
     console.log(projects);
     return (
         <div id='project' className=' jm_container'>
@@ -17,7 +20,12 @@ const Projects = ({ projects }: { projects: TProject[] }) => {
             {Array(3)
                 .fill(projects?.[0])
                 ?.map((project, idx) => (
-                    <ProjectCard key={idx} idx={idx} project={project} />
+                    <ProjectCard
+                        isHome={true}
+                        key={idx}
+                        idx={idx}
+                        project={project}
+                    />
                 ))}
 
             <div className='grid md:grid-cols-5 gap-10 items-center mt-14'>

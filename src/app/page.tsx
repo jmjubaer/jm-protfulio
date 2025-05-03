@@ -3,7 +3,7 @@
 
 // import Home from "@/components/pages/home";
 import About from "@/components/pages/home/About";
-import Banner from "@/components/pages/home/Banner";
+import Banner from "@/components/pages/home/banner/index.";
 import Contact from "@/components/pages/home/contact";
 import EducationAndExperience from "@/components/pages/home/EducationAndExperience";
 import Projects from "@/components/pages/home/Projects";
@@ -16,7 +16,7 @@ import { getSkills } from "@/services/skillServices";
 //     ssr: false,
 // });
 const HomePage = async () => {
-    const { data } = await getSkills();
+    const { data:skills } = await getSkills();
     const { data: projects } = await getAllProjects([
         { name: "page", value: 1 },
         { name: "limit", value: 3 },
@@ -26,7 +26,7 @@ const HomePage = async () => {
         <div className='overflow-hidden'>
             <Banner />
             <About />
-            <Skill skills={data} />
+            <Skill skills={skills} />
             <Service />
             <Projects projects={projects}/>
             <EducationAndExperience />

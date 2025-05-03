@@ -7,7 +7,7 @@ import Image from "next/image";
 import SectionTitle from "@/components/shered/SectionTitle";
 import CountUp from "react-countup";
 import { TSkill } from "@/types/skill.type";
-import Button from "@/components/ui/Button";
+import Link from "next/link";
 type TProps = {
     skills: TSkill[];
 };
@@ -23,7 +23,7 @@ const Skill = ({ skills }: TProps) => {
                 spaceBetween={10}
                 loop={true}
                 autoplay={{
-                    delay: 2500,
+                    delay: 5000,
                     disableOnInteraction: false,
                 }}
                 pagination={{
@@ -33,10 +33,6 @@ const Skill = ({ skills }: TProps) => {
                     640: {
                         slidesPerView: 2,
                         spaceBetween: 10,
-                    },
-                    768: {
-                        slidesPerView: 4,
-                        spaceBetween: 15,
                     },
                     1024: {
                         slidesPerView: 3,
@@ -51,7 +47,9 @@ const Skill = ({ skills }: TProps) => {
                 className='mySwiper mt-14'>
                 {skills?.map((skill, idx) => (
                     <SwiperSlide key={idx}>
-                        <div className='relative border border-gray-300 mb-10 rounded-md shadow-xl flex flex-col justify-between p-5 h-[500px]'>
+                        <div
+                            data-aos='zoom-in'
+                            className='relative border border-gray-300 mb-10 rounded-md shadow-xl flex flex-col justify-between p-5 h-[500px]'>
                             <Image
                                 className='object-contain h-[100px] rounded-xl mx-auto'
                                 src={skill?.image}
@@ -73,9 +71,14 @@ const Skill = ({ skills }: TProps) => {
                                 {skill?.totalProjects}
                             </p>
                             <p>{skill?.description}</p>
-                            <div className='mt-5 w-fit mx-auto'>
+                            {/* <div className='mt-5 w-fit mx-auto'>
                                 <Button>Show Project</Button>
-                            </div>
+                            </div> */}
+                            <Link
+                                href={`/projects?technology=${skill?.title}`}
+                                className='button_primary text-center'>
+                                Show Project
+                            </Link>
                         </div>
                     </SwiperSlide>
                 ))}

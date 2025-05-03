@@ -2,22 +2,31 @@
 import { Pagination, Spin } from "antd";
 import { useEffect, useRef, useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
-import { FaTag } from "react-icons/fa";
+import technologyIcon from "../../../assets/technology.png";
 import { Layout } from "antd";
 import { getAllProjects } from "@/services/projectServices";
 import { TProject } from "@/types/project.type";
 import ProjectCard from "@/components/ui/ProjectCard";
 import { IMeta } from "@/types";
+import { TSkill } from "@/types/skill.type";
+import Image from "next/image";
+// import { useSearchParams } from "next/navigation";
 
 const { Sider } = Layout;
 
-const Projects = () => {
+const Projects = ({
+    skills,
+    technologyParams,
+}: {
+    skills: TSkill[];
+    technologyParams?: string | undefined;
+}) => {
     const [projects, setProjects] = useState<TProject[] | null>(null);
     const [meta, setMeta] = useState<IMeta | null>(null);
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState("");
-    const [technology, setTechnology] = useState("");
+    const [technology, setTechnology] = useState(technologyParams);
 
     useEffect(() => {
         (async () => {
@@ -26,8 +35,11 @@ const Projects = () => {
                 { name: "page", value: page },
                 { name: "limit", value: 6 },
                 { name: "sort", value: "_id" },
+                { name: "fields", value: "title,techTitle,features,mainImage" },
                 { name: "searchTerm", value: searchTerm },
-                ...(technology ? [{ name: "type", value: technology }] : []),
+                ...(technology
+                    ? [{ name: "technology", value: technology }]
+                    : []),
             ]);
             if (data.success) {
                 setMeta(data?.meta);
@@ -37,13 +49,8 @@ const Projects = () => {
             setLoading(false);
         })();
     }, [technology, page, searchTerm]);
-    console.log(projects);
 
-    // useEffect(() => {
-    //     if (param.get("category")) {
-    //         setCategory(param.get("category")!);
-    //     }
-    // }, [param]);
+
     const contentRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         if (contentRef.current) {
@@ -76,11 +83,11 @@ const Projects = () => {
                         <hr className='text-gray-300 my-5' />
                         <div className=''>
                             <h3 className='block font-bold text-2xl secondary_font text-primary'>
-                                Category
+                                Technology
                             </h3>
                             <ul className='block w-full list-disc px-3 py-2 text-gray-600 rounded-3xl'>
                                 <li
-                                    className={`flex items-center cursor-pointer gap-2 font-medium my-4 ${
+                                    className={`flex border-t border-gray-300 py-2 items-center cursor-pointer gap-2 font-medium  ${
                                         technology === ""
                                             ? "text-primary/70"
                                             : ""
@@ -88,76 +95,36 @@ const Projects = () => {
                                     onClick={() => setTechnology("")}
                                     value=''>
                                     {" "}
-                                    <FaTag className='text-sm ' /> All
-                                    Categories
+                                    <Image
+                                        src={technologyIcon}
+                                        alt='icon'
+                                        width={30}
+                                        height={30}
+                                    />
+                                    ALL PROJECT
                                 </li>
-                                <li
-                                    className={`flex items-center cursor-pointer gap-2 font-medium my-4 ${
-                                        technology === "Mountain"
-                                            ? "text-primary/70"
-                                            : ""
-                                    }`}
-                                    onClick={() => setTechnology("Mountain")}
-                                    value=''>
-                                    {" "}
-                                    <FaTag className='text-sm ' /> Mountain
-                                </li>
-                                <li
-                                    className={`flex items-center cursor-pointer gap-2 font-medium my-4 ${
-                                        technology === "Road"
-                                            ? "text-primary/70"
-                                            : ""
-                                    }`}
-                                    onClick={() => setTechnology("Road")}
-                                    value=''>
-                                    {" "}
-                                    <FaTag className='text-sm ' /> Road Cycle
-                                </li>
-                                <li
-                                    className={`flex items-center cursor-pointer gap-2 font-medium my-4 ${
-                                        technology === "Hybrid"
-                                            ? "text-primary/70"
-                                            : ""
-                                    }`}
-                                    onClick={() => setTechnology("Hybrid")}
-                                    value=''>
-                                    {" "}
-                                    <FaTag className='text-sm ' />
-                                    Hybrid Cycle
-                                </li>
-                                <li
-                                    className={`flex items-center cursor-pointer gap-2 font-medium my-4 ${
-                                        technology === "BMX"
-                                            ? "text-primary/70"
-                                            : ""
-                                    }`}
-                                    onClick={() => setTechnology("BMX")}
-                                    value=''>
-                                    {" "}
-                                    <FaTag className='text-sm ' /> BMX Cycle
-                                </li>
-                                <li
-                                    className={`flex items-center cursor-pointer gap-2 font-medium my-4 ${
-                                        technology === "Electric"
-                                            ? "text-primary/70"
-                                            : ""
-                                    }`}
-                                    onClick={() => setTechnology("Electric")}
-                                    value=''>
-                                    {" "}
-                                    <FaTag className='text-sm ' /> Electric
-                                </li>
-                                <li
-                                    className={`flex items-center cursor-pointer gap-2 font-medium my-4 ${
-                                        technology === "Kids"
-                                            ? "text-primary/70"
-                                            : ""
-                                    }`}
-                                    onClick={() => setTechnology("Kids")}
-                                    value=''>
-                                    {" "}
-                                    <FaTag className='text-sm ' /> Kids Cycle
-                                </li>
+                                {skills?.map((skill) => (
+                                    <li
+                                        key={skill?.title}
+                                        className={`flex items-center border-t border-gray-300 py-2 cursor-pointer gap-3 font-medium ${
+                                            technology === ""
+                                                ? "text-primary/70"
+                                                : ""
+                                        }`}
+                                        onClick={() =>
+                                            setTechnology(skill?.title)
+                                        }
+                                        value=''>
+                                        {" "}
+                                        <Image
+                                            src={skill?.image}
+                                            alt='icon'
+                                            width={30}
+                                            height={30}
+                                        />
+                                        {skill?.title}
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>
@@ -188,8 +155,8 @@ const Projects = () => {
                                             )
                                         )
                                 ) : (
-                                    <div className='text-gray-400 text-2xl text-center col-span-3 my-10'>
-                                        There has no available bicycle
+                                    <div className='text-gray-400 text-2xl text-center col-span-3 my-20 mt-40'>
+                                        Project adding soon...
                                     </div>
                                 )}
                             </div>

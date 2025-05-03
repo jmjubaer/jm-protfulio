@@ -33,7 +33,7 @@ export default function RootLayout({
             <body
                 className={`${rubik_Moonrocks.className} ${belanosima.className} ${poppins.className} antialiased`}>
                 <Navbar />
-                <div className=''>{children}</div>
+                <div className='min-h-screen'>{children}</div>
                 <Footer/>
             </body>
         </html>
