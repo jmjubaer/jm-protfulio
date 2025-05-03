@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import animation from "@/assets/contact-us-animation.json";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import SectionTitle from "@/components/shered/SectionTitle";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { TContact } from "@/types";
 import { sendMessage } from "@/services/sendMessage";
 import Swal from "sweetalert2";
@@ -26,13 +26,13 @@ const Contact = () => {
             };
             const result = await sendMessage(messageBody);
             console.log(result);
-            if(result?.success){
+            if (result?.success) {
                 Swal.fire({
                     icon: "success",
                     title: "Success ",
                     text: "Thank you for Contact Us!",
                 });
-                reset()
+                reset();
             }
         } catch (err) {
             console.error(err);

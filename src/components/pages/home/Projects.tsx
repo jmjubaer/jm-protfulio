@@ -1,10 +1,12 @@
-import image1 from "@/assets/projects/Music-hub.png";
 import image2 from "@/assets/projects/Jm-Toy-Mart.png";
 import image3 from "@/assets/projects/Jm-recipest.png";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 import SectionTitle from "@/components/shered/SectionTitle";
-const Projects = () => {
+import { TProject } from "@/types/project.type";
+import ProjectCard from "@/components/ui/ProjectCard";
+const Projects = ({ projects }: { projects: TProject[] }) => {
+    console.log(projects);
     return (
         <div id='project' className=' jm_container'>
             <SectionTitle
@@ -12,86 +14,12 @@ const Projects = () => {
                 lastheading={"Projects"}
                 subHeading={"Explore my awesome project"}></SectionTitle>
 
-            <div className='grid md:grid-cols-5 gap-10 items-center mt-14'>
-                <div data-aos='fade-right' className='md:col-span-3'>
-                    <h2 data-aos='fade-up' className='text-5xl font-semibold'>
-                        Music Hub
-                    </h2>
-                    <p
-                        data-aos='fade-up'
-                        className='text-xl font-medium mt-2 text-[#1C99FE]'>
-                        MERN Project
-                    </p>
-                    <h3
-                        data-aos='fade-up'
-                        className='text-2xl mt-8 font-semibold'>
-                        Features:
-                    </h3>
-                    <div className='text-lg'>
-                        <li data-aos='fade-up'>
-                            This is course selling Project
-                        </li>
-                        <li data-aos='fade-up'>
-                            A user can select a curse and also can enrolled this
-                            curse. After confirm payment complete enrolled.
-                        </li>
-                        <li data-aos='fade-up'>
-                            This site has awesome dashboard. It changes base on
-                            the user role,
-                        </li>
-                        <li data-aos='fade-up'>
-                            f a user is Admin he can make a user admin or
-                            instructor and he also can approve/denied the course
-                            which add the instructor
-                        </li>
-                        <li data-aos='fade-up'>
-                            If a user is instructor he can add a course and he
-                            also show his all courses which he added.
-                        </li>
-                        <li data-aos='fade-up'>
-                            This site also has theme system. A user can toggle
-                            theme in light?dark.
-                        </li>
-                    </div>
-                    <div
-                        data-aos='fade-up'
-                        className='flex flex-wrap md:flex-nowrap gap-5 justify-between mt-5'>
-                        <Button>
-                            <a
-                                target='_blank'
-                                href='https://music-hub-8cb59.web.app/'>
-                                Live Site
-                            </a>
-                        </Button>
-                        <Button>
-                            <a
-                                target='_blank'
-                                href='https://github.com/jmjubaer/music-hub-client'>
-                                Clint Code
-                            </a>
-                        </Button>
-                        <Button>
-                            <a
-                                target='_blank'
-                                href='https://github.com/jmjubaer/music-hub-server'>
-                                Server Code
-                            </a>
-                        </Button>
-                    </div>
-                    <p></p>
-                </div>
-                <div
-                    data-aos='fade-left'
-                    className='md:col-span-2 h-[60vh] md:h-full w-[80vw] md:w-full mx-auto relative jm_parent overflow-hidden border-4 border_gradient'>
-                    <div className='absolute w-full h-fit top-0 left-0 jm_child'>
-                        <Image
-                            className='w-full h-full jm_transition'
-                            src={image1}
-                            alt=''
-                        />
-                    </div>
-                </div>
-            </div>
+            {Array(3)
+                .fill(projects?.[0])
+                ?.map((project, idx) => (
+                    <ProjectCard key={idx} idx={idx} project={project} />
+                ))}
+
             <div className='grid md:grid-cols-5 gap-10 items-center mt-14'>
                 <div data-aos='fade-left' className='md:col-span-3 md:order-2'>
                     <h2 data-aos='fade-up' className='text-5xl font-semibold'>

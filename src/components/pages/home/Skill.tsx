@@ -5,10 +5,13 @@ import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import SectionTitle from "@/components/shered/SectionTitle";
-import { skills } from "@/services/skillServices";
 import CountUp from "react-countup";
-
-const Skill = () => {
+import { TSkill } from "@/types/skill.type";
+import Button from "@/components/ui/Button";
+type TProps = {
+    skills: TSkill[];
+};
+const Skill = ({ skills }: TProps) => {
     return (
         <div className='pt-28 jm_container'>
             <SectionTitle
@@ -48,7 +51,7 @@ const Skill = () => {
                 className='mySwiper mt-14'>
                 {skills?.map((skill, idx) => (
                     <SwiperSlide key={idx}>
-                        <div className='relative border border-gray-300 mb-10 rounded-md shadow-xl flex flex-col justify-between p-5 h-[450px]'>
+                        <div className='relative border border-gray-300 mb-10 rounded-md shadow-xl flex flex-col justify-between p-5 h-[500px]'>
                             <Image
                                 className='object-contain h-[100px] rounded-xl mx-auto'
                                 src={skill?.image}
@@ -65,11 +68,14 @@ const Skill = () => {
                             <h2 className='text-3xl my-t text-center'>
                                 {skill?.title}
                             </h2>
-                            <p className="text-4xl font-bold my-4">
-                                <span className="text-2xl">Total Project:</span>{" "}
+                            <p className='text-4xl font-bold my-4'>
+                                <span className='text-2xl'>Total Project:</span>{" "}
                                 {skill?.totalProjects}
                             </p>
                             <p>{skill?.description}</p>
+                            <div className='mt-5 w-fit mx-auto'>
+                                <Button>Show Project</Button>
+                            </div>
                         </div>
                     </SwiperSlide>
                 ))}

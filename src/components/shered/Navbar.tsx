@@ -3,6 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 import NavLink from "./NavLInk";
 import Logo from "./Logo";
+import Link from "next/link";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
@@ -17,23 +18,23 @@ const Navbar = () => {
                     <ul
                         className={`flex flex-col m-10 lg:m-0 lg:flex-row gap-4 text-lg`}>
                         <li>
-                            <NavLink href={"#home"}>Home</NavLink>
+                            <NavLink href={"/#home"}>Home</NavLink>
                         </li>
                         <li>
                             {/* <NavLink to={"#about"} className={({isActive}) => isActive ? "gradient_text" : ""}>About me</NavLink> */}
-                            <a href='#about'>About Me</a>
+                            <Link href='/#about'>About Me</Link>
                         </li>
                         <li>
                             {/* <NavLink to={"service"} className={({isActive}) => isActive ? "gradient_text" : ""}>Service</NavLink> */}
-                            <a href='#service'>Services</a>
+                            <Link href='/#service'>Services</Link>
                         </li>
                         <li>
                             {/* <NavLink to={"project"} className={({isActive}) => isActive ? "gradient_text" : ""}>Project</NavLink> */}
-                            <a href='#project'>Projects</a>
+                            <NavLink href='/projects'>Projects</NavLink>
                         </li>
                         <li>
                             {/* <NavLink to={"contact"} className={({isActive}) => isActive ? "gradient_text" : ""}>Contact Me</NavLink> */}
-                            <a href='#contact'>Contact Me</a>
+                            <Link href='/#contact'>Contact Me</Link>
                         </li>
                     </ul>
                 </div>

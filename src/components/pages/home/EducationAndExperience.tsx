@@ -11,7 +11,7 @@ const EducationAndExperience = () => {
                 firstHeading={"Education and"}
                 lastheading={"Experience"}></SectionTitle>
             <div className='grid grid-cols-3 gap-7 mt-14'>
-                <div className='border-2 border-gray-300 text-center p-5 rounded-tl-4xl shadow-xl rounded-br-4xl overflow-hidden flex flex-col justify-between'>
+                <div data-aos="fade-right" className='border-2 border-gray-300 text-center p-5 rounded-tl-4xl shadow-xl rounded-br-4xl overflow-hidden flex flex-col justify-between'>
                     <Image
                         src={collage}
                         alt='Education'
@@ -24,7 +24,7 @@ const EducationAndExperience = () => {
                         Govt. Siraj Uddin Memorial Collage
                     </p>
                 </div>
-                <div className='border-2 border-gray-300 text-center p-5 rounded-tl-4xl shadow-xl rounded-br-4xl overflow-hidden flex flex-col justify-between'>
+                <div data-aos="fade-up" className='border-2 border-gray-300 text-center p-5 rounded-tl-4xl shadow-xl rounded-br-4xl overflow-hidden flex flex-col justify-between'>
                     <Image
                         src={wecofy}
                         alt='Education'
@@ -35,7 +35,7 @@ const EducationAndExperience = () => {
                     <p className='font-bold'>Dec-2023 to Feb-2024</p>
                     <p className='text-lg '>WECOFY TECHNOTIDES PVT LTD</p>
                 </div>
-                <div className='border-2 border-gray-300 text-center p-5 rounded-tl-4xl shadow-xl rounded-br-4xl overflow-hidden flex flex-col justify-between'>
+                <div data-aos="fade-left" className='border-2 border-gray-300 text-center p-5 rounded-tl-4xl shadow-xl rounded-br-4xl overflow-hidden flex flex-col justify-between'>
                     <Image
                         src={nexstack}
                         alt='Education'

@@ -7,12 +7,22 @@ export type TContact = {
     message: string;
 };
 export type TError = {
-    message: string
-}
+    message: string;
+};
 export type TMessage = {
     name: string;
     email: string;
     phone: string;
     subject: string;
     message: string;
+};
+export type TQueryParam = {
+    name: string;
+    value: string | number | boolean;
+};
+export type IMeta = {
+    limit: number;
+    page: number;
+    total: number;
+    totalPage: number;
 };
