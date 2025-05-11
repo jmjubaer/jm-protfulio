@@ -1,7 +1,11 @@
 import Projects from "@/components/pages/projects";
 import { getSkills } from "@/services/skillServices";
+import { Metadata } from "next";
 import React from "react";
-
+export const metadata: Metadata = {
+    title: "Md Jubaer | Projects",
+    description: "My name is md jubaer is a MERN stack developer. Here has some my project.",
+};
 const ProjectsPage = async ({
     searchParams,
 }: {

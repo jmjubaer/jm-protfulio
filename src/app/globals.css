@@ -74,12 +74,23 @@ html {
     bottom: 0;
     transition: all linear 0.5s;
 }
-
+:where(.css-dev-only-do-not-override-1m63z2v).ant-tabs .ant-tabs-tab {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+}
 .button_primary {
     @apply px-7 py-3 bg-gradient-to-r to-[#1C99FE] via-[#7644FF] from-[#FD4766] uppercase text-white rounded-md cursor-pointer;
 }
 .resume-modal {
     width: 80% !important;
+}
+.mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.3;
+}
+.mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
 }
 @media screen and (max-width: 540px) {
     .resume-modal {

@@ -3,17 +3,53 @@ import { TProject } from "@/types/project.type";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 // Import Swiper styles
+import { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+import "swiper/css/free-mode";
+import "swiper/css/thumbs";
 // import required modules
-import { EffectFade, Navigation, Pagination } from "swiper/modules";
+import {
+    EffectFade,
+    Navigation,
+    Pagination,
+    Thumbs,
+    FreeMode,
+} from "swiper/modules";
 import Image from "next/image";
+import { useState } from "react";
+import { Tabs, TabsProps } from "antd";
+import DescriptionTab from "./DescriptionTab";
+import TechnologyTab from "./TechnologyTab";
+import ChallengeAndPlanTab from "./ChallengeAndPlanTab";
 
 const ProjectDetails = ({ project }: { project: TProject }) => {
+    const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
     console.log(project);
+    const items: TabsProps["items"] = [
+        {
+            key: "1",
+            label: "Description",
+            children: (
+                <DescriptionTab
+                    duration={project?.duration}
+                    description={project?.description}
+                />
+            ),
+        },
+        {
+            key: "2",
+            label: `Technology`,
+            children: <TechnologyTab project={project} />,
+        },
+        {
+            key: "3",
+            label: `Challenge and Plan`,
+            children: <ChallengeAndPlanTab project={project} />,
+        },
+    ];
     return (
         <div className='jm_container py-20'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-10 '>
@@ -25,20 +61,50 @@ const ProjectDetails = ({ project }: { project: TProject }) => {
                         pagination={{
                             clickable: true,
                         }}
+                        thumbs={{ swiper: thumbsSwiper }}
                         loop={true}
                         autoplay={{
                             delay: 3000,
                             disableOnInteraction: false,
                         }}
-                        modules={[EffectFade, Navigation, Pagination, Autoplay]}
-                        className='mySwiper'>
+                        modules={[
+                            EffectFade,
+                            Navigation,
+                            Pagination,
+                            Autoplay,
+                            Thumbs,
+                        ]}
+                        className=''>
                         {project?.images?.map((image) => (
                             <SwiperSlide key={image}>
                                 <Image
-                                    className='w-full h-[400px] object-contain'
+                                    className='w-full h-[400px] object-cover'
                                     src={image}
                                     width={500}
                                     height={300}
+                                    alt='image'
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                    <Swiper
+                        onSwiper={setThumbsSwiper}
+                        loop={true}
+                        spaceBetween={10}
+                        slidesPerView={4}
+                        freeMode={true}
+                        watchSlidesProgress={true}
+                        modules={[FreeMode, Navigation, Thumbs]}
+                        className='mySwiper'>
+                        {project?.images?.map((image) => (
+                            <SwiperSlide
+                                key={image}
+                                className='border-2 border-gray-300'>
+                                <Image
+                                    className='w-full h-[50px] object-cover'
+                                    src={image}
+                                    width={200}
+                                    height={50}
                                     alt='image'
                                 />
                             </SwiperSlide>
@@ -59,44 +125,11 @@ const ProjectDetails = ({ project }: { project: TProject }) => {
                 </div>
             </div>
             <div className='border-t border-gray-300 mt-8 pt-5'>
-                <div className=''>
-                    <h2 className='text-xl font-semibold'>
-                        Project Description{" "}
-                    </h2>
-                    <p className=' mt-3 sm:ml-10'>{project?.description}</p>
-                </div>{" "}
-                <div className='flex gap-5 my-5'>
-                    <h2 className='text-xl font-semibold'>
-                        Project duration:{" "}
-                    </h2>
-                    <p className='font-bold text-2xl '>{project?.duration}</p>
-                </div>
-                <div className=' sm:flex  gap-20 mt-5'>
-                    <div className=''>
-                        <h2 className='text-xl font-semibold'>
-                            Use Technology{" "}
-                        </h2>
-                        <div className=' mt-3 ml-10'>
-                            {project?.technology?.map((item) => (
-                                <li className='text-lg font-medium' key={item}>
-                                    {item}
-                                </li>
-                            ))}
-                        </div>
-                    </div>{" "}
-                    <div className=''>
-                        <h2 className='text-xl font-semibold'>
-                            Use Technology{" "}
-                        </h2>
-                        <div className=' mt-3 ml-10'>
-                            {project?.packages?.map((item) => (
-                                <li className='text-lg font-medium' key={item}>
-                                    {item}
-                                </li>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+                <Tabs
+                    defaultActiveKey='1'
+                    items={items}
+                    // onChange={onChange}
+                />
             </div>
             <div className='flex flex-wrap md:flex-nowrap gap-5 justify-between mt-10'>
                 <a

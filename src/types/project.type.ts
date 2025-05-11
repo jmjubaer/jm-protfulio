@@ -5,7 +5,8 @@ export type TProject = {
     mainImage: string;
     images: string[];
     features: string[];
-    
+    challenges: string[];
+    improvementPlans: string[];
     technology: string[];
     packages: string[];
     duration: string;
