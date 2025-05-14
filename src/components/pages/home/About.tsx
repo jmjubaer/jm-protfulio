@@ -1,5 +1,5 @@
 "use client";
-import image from "@/assets/my-image-3.jpeg";
+import image from "@/assets/my-image-4.jpg";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 const About = () => {
@@ -12,7 +12,7 @@ const About = () => {
                 className='rounded-full mx-auto w-4/5 md:w-full bg_gradient col-span-2'>
                 <div className='rounded-full w-[90%] h-[70vw] m-[5%] md:w-11/12 md:h-[32vw] md:m-[4.3%] overflow-hidden'>
                     <Image
-                        className=' bg-white w-full h-full object-cover scale-200 rotate-6 object-[-20px]'
+                        className=' bg-white w-full h-full object-cover -rotate-12'
                         src={image}
                         alt=''
                     />

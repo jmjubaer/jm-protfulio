@@ -17,9 +17,7 @@ const ShowResumeModal = () => {
                 footer={null}
                 open={open}
                 onCancel={() => setOpen(false)}>
-                <h2 className='text-3xl font text-center font-semibold'>
-                    My Resume
-                </h2>
+              
                 <Image src={resume} alt='resume' />
             </Modal>
         </div>

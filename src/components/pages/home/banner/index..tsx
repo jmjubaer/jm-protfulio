@@ -2,7 +2,7 @@
 import { TypeAnimation } from "react-type-animation";
 // import bg from "@/assets/my-image.png";
 // import newImage from "@/assets/new.jpeg";
-import newImage from "@/assets/my-image-4.jpg";
+import newImage from "@/assets/IMG_20250510_130850.jpg";
 
 import {
     FaFacebookF,
@@ -50,9 +50,14 @@ const Banner = () => {
                         repeat={Infinity}
                     />
                     <p className='mt-5 w-11/12'>
-                        I am Md jubaer islam from Khulna. I am also a React
-                        developer. I also have basic knowledge in another MERN
-                        technology is MongoDB, Express js, and node js.
+                         I’m Md Jubaer from Khulna, Bangladesh. I’m a
+                        MERN stack developer with professional experience in
+                        building modern web applications. I have strong skills
+                        in HTML, CSS, JavaScript, TypeScript, React.js, Next.js,
+                        Express.js, Mongoose, and MongoDB. I’m also proficient
+                        in CSS frameworks like Tailwind CSS and Bootstrap, and
+                        experienced with state management libraries such as
+                        Redux and Zustand.
                     </p>
                     <ul className='flex flex-wrap justify-center sm:justify-normal gap-10 mt-5'>
                         <li className='p-3 rounded-full dics_effects'>
@@ -113,9 +118,10 @@ const Banner = () => {
                         <ShowResumeModal />
                     </div>
                 </div>
+
                 <div className='rounded-full bg_gradient mx-auto w-4/5 md:w-full order-1 md:order-3 overflow-hidden'>
                     <Image
-                        className='rounded-full w-[90%] md:w-11/12 h-[70vw] md:h-[28vw] top-1/2 m-[5%] md:m-[4.2%] bg-white object-cover -rotate-12 '
+                        className='rounded-full w-[90%] md:w-11/12 h-[70vw] md:h-[28vw] top-1/2 m-[5%] md:m-[4.2%] bg-white object-cover object-top '
                         src={newImage}
                         alt=''
                     />
