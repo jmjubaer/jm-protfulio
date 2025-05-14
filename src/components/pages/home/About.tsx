@@ -1,5 +1,5 @@
 "use client";
-import image from "@/assets/my-image-2.png";
+import image from "@/assets/my-image-3.jpeg";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 const About = () => {
@@ -10,11 +10,13 @@ const About = () => {
             <div
                 data-aos='fade-right'
                 className='rounded-full mx-auto w-4/5 md:w-full bg_gradient col-span-2'>
-                <Image
-                    className='rounded-full w-[90%] h-[70vw] m-[5%] md:w-11/12 md:h-[32vw] md:m-[4.3%] bg-white object-cover'
-                    src={image}
-                    alt=''
-                />
+                <div className='rounded-full w-[90%] h-[70vw] m-[5%] md:w-11/12 md:h-[32vw] md:m-[4.3%] overflow-hidden'>
+                    <Image
+                        className=' bg-white w-full h-full object-cover scale-200 rotate-6 object-[-20px]'
+                        src={image}
+                        alt=''
+                    />
+                </div>
             </div>
             <div data-aos='fade-left' className='md:col-span-3'>
                 <h2 className='text-6xl font-semibold'>

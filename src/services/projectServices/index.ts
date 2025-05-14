@@ -15,7 +15,10 @@ export const getAllProjects = async (queryParams?: TQueryParam[]) => {
         const baseUrl = `${process.env.NEXT_PUBLIC_BASE_API}/projects`;
         const fullUrl = queryString ? `${baseUrl}?${queryString}` : baseUrl;
         const res = await fetch(fullUrl, {
-            cache: "no-cache",
+            next: {
+                revalidate: 1800
+            }
+            
         });
         const result = await res.json();
         return result;

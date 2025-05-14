@@ -74,7 +74,7 @@ html {
     bottom: 0;
     transition: all linear 0.5s;
 }
-:where(.css-dev-only-do-not-override-1m63z2v).ant-tabs .ant-tabs-tab {
+.ant-tabs .ant-tabs-tab {
     font-size: 16px !important;
     font-weight: 700 !important;
 }
