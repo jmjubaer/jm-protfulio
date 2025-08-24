@@ -62,7 +62,7 @@ const Projects = ({
                 {/* Filter and search section */}
                 <Sider
                     width={250}
-                    theme='light'
+                    // theme='dark'
                     className='pt-20'
                     breakpoint='lg'
                     collapsedWidth='0'>
@@ -133,7 +133,7 @@ const Projects = ({
                     <div
                         ref={contentRef}
                         style={{ scrollbarWidth: "none" }}
-                        className=' h-[calc(100vh-30px)] overflow-auto  lg:p-5 pr-0'>
+                        className=' h-[calc(100vh-30px)] overflow-auto bg-primary lg:p-5 pr-0'>
                         <Spin spinning={loading} tip='Loading...' size='large'>
                             {/* Product section */}
                             <div className='mb-5'>

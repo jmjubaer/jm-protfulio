@@ -1,18 +1,43 @@
-"use client"
+"use client";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavLink from "./NavLInk";
 import Logo from "./Logo";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+     const pathname = usePathname();
     const [open, setOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    console.log(scrolled);
+    useEffect(() => {
+        if (pathname !== "/") {
+            setScrolled(true); // always true on non-home pages
+            return;
+        }
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            if (scrollTop > 10) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     return (
-        <div className='fixed z-50 bg-white top-0 left-0 w-full '>
+        <div
+            className={`fixed z-50 top-0 left-0 w-full ${
+                scrolled ? "bg-primary" : "bg-transparent"
+            }`}>
             <nav className='flex justify-between items-center jm_container py-3'>
                 <Logo />
                 <div
-                    className={`fixed lg:static bg-white h-screen lg:h-auto lg:w-auto top-0 left-0 ${
+                    className={`fixed lg:static  h-screen lg:h-auto lg:w-auto top-0 left-0 ${
                         open ? "w-4/5" : "w-0 overflow-hidden"
                     } transition-all ease-linear duration-500`}>
                     <ul
