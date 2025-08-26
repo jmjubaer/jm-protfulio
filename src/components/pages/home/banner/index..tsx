@@ -1,5 +1,5 @@
 "use client";
-import { TypeAnimation } from "react-type-animation";
+// import { TypeAnimation } from "react-type-animation";
 // import bg from "@/assets/my-image.png";
 // import newImage from "@/assets/new.jpeg";
 // import newImage from "@/assets/IMG_20250510_130850.jpg";
