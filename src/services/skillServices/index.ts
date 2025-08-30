@@ -5,6 +5,7 @@ export const getSkills = async () => {
             next: {
                 revalidate: 1800,
             },
+            cache: "force-cache"
         });
         const result = await res.json();
         return result;

@@ -11,6 +11,21 @@ html {
     --color-primary: #050816;
 }
 
+@keyframes moveOnPath {
+  to {
+    offset-distance: 100%;
+  }
+}
+
+/* Define the half-circle path */
+.animate-follow-path {
+  offset-path: path("M 20 150 A 130 130 0 0 1 280 150"); /* arc path */
+  offset-rotate: 0deg; /* don’t rotate icons */
+  offset-distance: 0%;
+  animation: moveOnPath 12s linear infinite;
+}
+
+
 .jm_container {
     width: 96%;
     max-width: 1240px;

@@ -1,33 +1,47 @@
+"use client";
 import { useRef } from "react";
 import SkillCard from "./SkillCard";
-import { SkillsContainer } from "./SkillsContainer";
-
+import CopyEmailButton from "./CopyEmailButton";
+import vector from "@/assets/flat_my_image.png";
+import Image from "next/image";
 const AboutSection = () => {
     const grid2Container = useRef<HTMLDivElement>(null);
+
     return (
         <section className='jm_container' id='about'>
-            <h2 className=''>About Me</h2>
-            <div className='grid grid-cols-2 gap-4 mt-12 '>
+            <h2 className='text-4xl font-semibold'>About Me</h2>
+            <div className='grid grid-cols-2 gap-4 mt-5 h-screen'>
                 {/* Grid 1 */}
-                <div className=' relative bg-[#2A2C4C] row-span-2 rounded-2xl p-4'>
-                    <img src='assets/coding-pov.png' className='' />
-                    <div className='z-10'>
-                        <p className='headtext'>Hi, I`m Ali Sanati</p>
-                        <p className='subtext'>
-                            Over the last 4 years, I developed my frontend and
-                            backend dev skills to deliver dynamic and software
-                            and web applications.
+                <div className=' relative bg-[#2A2C4C]/50 row-span-2 rounded-2xl p-4 overflow-hidden flex flex-col justify-between '>
+                    <Image
+                        src={vector}
+                        alt='vector'
+                        className='scale-[1.8] -mt-7 ml-16 rotate-6'
+                    />
+                    <div className='z-20 '>
+                        <p className='text-2xl font-semibold mb-2'>
+                            Hi, I`m Md Jubaer
+                        </p>
+                        <p className='text-white/60'>
+                            I’m Md Jubaer from Khulna, Bangladesh. I’m a MERN
+                            stack developer with professional experience in
+                            building modern web applications. I have strong
+                            skills in HTML, CSS, JavaScript, TypeScript,
+                            React.js, Next.js, Express.js, Mongoose, and
+                            MongoDB. I’m also proficient in CSS frameworks like
+                            Tailwind CSS and Bootstrap, and experienced with
+                            state management libraries such as Redux and
+                            Zustand.
                         </p>
                     </div>
-                    {/* <div className='absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo' /> */}
                 </div>
                 {/* Grid 2 */}
-                <div className='bg-[#2A2C4C] w-full h-[50vh] relative overflow-hidden rounded-2xl'>
+                <div className='bg-[#2A2C4C]/50 w-full relative overflow-hidden rounded-2xl'>
                     <div
                         ref={grid2Container}
                         className='flex items-center justify-center w-full h-full relative'>
                         <p className='flex items-end text-5xl text-gray-500'>
-                            CODE IS CRAFT
+                            MY CAPABILITIES
                         </p>
                         <SkillCard
                             style={{
@@ -35,7 +49,7 @@ const AboutSection = () => {
                                 top: "30%",
                                 left: "20%",
                             }}
-                            text='GRASP'
+                            text='MERN Stack'
                             containerRef={grid2Container}
                         />
                         <SkillCard
@@ -44,16 +58,16 @@ const AboutSection = () => {
                                 top: "60%",
                                 left: "45%",
                             }}
-                            text='SOLID'
+                            text='NEXT JS'
                             containerRef={grid2Container}
                         />
                         <SkillCard
                             style={{
                                 rotate: "90deg",
                                 bottom: "30%",
-                                left: "70%",
+                                right: "-8%",
                             }}
-                            text='Design Patterns'
+                            text='Front End'
                             containerRef={grid2Container}
                         />
                         <SkillCard
@@ -62,7 +76,7 @@ const AboutSection = () => {
                                 top: "55%",
                                 left: "0%",
                             }}
-                            text='Design Principles'
+                            text='Back End'
                             containerRef={grid2Container}
                         />
                         <SkillCard
@@ -71,7 +85,7 @@ const AboutSection = () => {
                                 top: "10%",
                                 left: "38%",
                             }}
-                            text='SRP'
+                            text='Full Stack'
                             containerRef={grid2Container}
                         />
                         <SkillCard
@@ -80,7 +94,7 @@ const AboutSection = () => {
                                 top: "70%",
                                 left: "70%",
                             }}
-                            image='assets/logos/csharp-pink.png'
+                            image='assets/node.png'
                             containerRef={grid2Container}
                         />
                         <SkillCard
@@ -89,32 +103,38 @@ const AboutSection = () => {
                                 top: "70%",
                                 left: "25%",
                             }}
-                            image='assets/logos/dotnet-pink.png'
+                            image='assets/javascript.png'
                             containerRef={grid2Container}
                         />
                         <SkillCard
                             style={{
                                 rotate: "-45deg",
                                 top: "5%",
-                                left: "10%",
+                                right: "10%",
+                                width: "120px",
                             }}
-                            image='assets/logos/blazor-pink.png'
+                            image='assets/mongodb.png'
+                            containerRef={grid2Container}
+                        />
+                        <SkillCard
+                            style={{
+                                rotate: "0deg",
+                                top: "5%",
+                                left: "0%",
+                                width: "200px",
+                            }}
+                            image='assets/mongoose.png'
                             containerRef={grid2Container}
                         />
                     </div>
                 </div>
                 {/* Grid 5 */}
-                <div className='bg-[#2A2C4C] w-full h-[50vh] relative rounded-2xl p-4'>
-                    <div className=''>
-                        <p className='headText'>Teck Stack</p>
-                        <p className='subtext'>
-                            I specialize in a variety of languages, frameworks,
-                            and tools taht allow me to build robust and scalable
-                            applications
+                <div className='bg-[#2A2C4C]/80 w-full relative overflow-hidden rounded-2xl'>
+                    <div className='flex flex-col items-center justify-center gap-4 size-full'>
+                        <p className='text-center text-xl font-medium'>
+                            Do you want to start a project together?
                         </p>
-                    </div>
-                    <div className='absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125'>
-                        <SkillsContainer />
+                        <CopyEmailButton />
                     </div>
                 </div>
             </div>
