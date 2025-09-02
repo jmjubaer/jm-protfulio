@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import SkillCard from "./SkillCard";
+import CapabilityCard from "./CapabilityCard";
 import CopyEmailButton from "./CopyEmailButton";
 import vector from "@/assets/flat_my_image.png";
 import Image from "next/image";
@@ -43,7 +43,7 @@ const AboutSection = () => {
                         <p className='flex items-end text-5xl text-gray-500'>
                             MY CAPABILITIES
                         </p>
-                        <SkillCard
+                        <CapabilityCard
                             style={{
                                 rotate: "75deg",
                                 top: "30%",
@@ -52,7 +52,7 @@ const AboutSection = () => {
                             text='MERN Stack'
                             containerRef={grid2Container}
                         />
-                        <SkillCard
+                        <CapabilityCard
                             style={{
                                 rotate: "-30deg",
                                 top: "60%",
@@ -61,7 +61,7 @@ const AboutSection = () => {
                             text='NEXT JS'
                             containerRef={grid2Container}
                         />
-                        <SkillCard
+                        <CapabilityCard
                             style={{
                                 rotate: "90deg",
                                 bottom: "30%",
@@ -70,7 +70,7 @@ const AboutSection = () => {
                             text='Front End'
                             containerRef={grid2Container}
                         />
-                        <SkillCard
+                        <CapabilityCard
                             style={{
                                 rotate: "-45deg",
                                 top: "55%",
@@ -79,7 +79,7 @@ const AboutSection = () => {
                             text='Back End'
                             containerRef={grid2Container}
                         />
-                        <SkillCard
+                        <CapabilityCard
                             style={{
                                 rotate: "20deg",
                                 top: "10%",
@@ -88,7 +88,7 @@ const AboutSection = () => {
                             text='Full Stack'
                             containerRef={grid2Container}
                         />
-                        <SkillCard
+                        <CapabilityCard
                             style={{
                                 rotate: "30deg",
                                 top: "70%",
@@ -97,7 +97,7 @@ const AboutSection = () => {
                             image='assets/node.png'
                             containerRef={grid2Container}
                         />
-                        <SkillCard
+                        <CapabilityCard
                             style={{
                                 rotate: "-45deg",
                                 top: "70%",
@@ -106,7 +106,7 @@ const AboutSection = () => {
                             image='assets/javascript.png'
                             containerRef={grid2Container}
                         />
-                        <SkillCard
+                        <CapabilityCard
                             style={{
                                 rotate: "-45deg",
                                 top: "5%",
@@ -116,7 +116,7 @@ const AboutSection = () => {
                             image='assets/mongodb.png'
                             containerRef={grid2Container}
                         />
-                        <SkillCard
+                        <CapabilityCard
                             style={{
                                 rotate: "0deg",
                                 top: "5%",

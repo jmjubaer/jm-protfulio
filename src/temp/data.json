@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Git",
+    "image": "https://res.cloudinary.com/dykcsfdvi/image/upload/v1756803465/github_lorepp.png",
+    "totalProjects": 50,
+    "skill": 85,
+    "description": "Git is a distributed version control system that helps developers track changes in their codebase, collaborate with teams, manage branches, and maintain project history efficiently..",
+    "category": "Tools",
+    "color": "#E84D31"
+  },
+  {
+    "title": "Github",
+    "image": "https://res.cloudinary.com/dykcsfdvi/image/upload/v1756803465/git_axsbuj.png",
+    "totalProjects": 50,
+    "skill": 80,
+    "description": "GitHub is a cloud-based platform built on top of Git that enables developers to host repositories, collaborate on projects, manage issues, and contribute to open-source communities.",
+    "category": "Tools",
+    "color": "#1A1E22"
+  }
+]

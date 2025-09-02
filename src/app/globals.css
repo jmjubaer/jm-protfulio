@@ -9,22 +9,22 @@ html {
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
     --color-primary: #050816;
+    --color-secondary: #2a2c4c;
 }
 
 @keyframes moveOnPath {
-  to {
-    offset-distance: 100%;
-  }
+    to {
+        offset-distance: 100%;
+    }
 }
 
 /* Define the half-circle path */
 .animate-follow-path {
-  offset-path: path("M 20 150 A 130 130 0 0 1 280 150"); /* arc path */
-  offset-rotate: 0deg; /* don’t rotate icons */
-  offset-distance: 0%;
-  animation: moveOnPath 12s linear infinite;
+    offset-path: path("M 20 150 A 130 130 0 0 1 280 150"); /* arc path */
+    offset-rotate: 0deg; /* don’t rotate icons */
+    offset-distance: 0%;
+    animation: moveOnPath 12s linear infinite;
 }
-
 
 .jm_container {
     width: 96%;
@@ -38,10 +38,9 @@ html {
     @apply block lg:flex justify-between lg:col-span-3 items-center absolute lg:static lg:w-auto top-0 left-0 overflow-hidden h-screen lg:h-auto duration-500 bg-[#fff] lg:bg-[transparent] lg:p-0 z-50;
 }
 
-.bg-hero{
-    background: url('../assets/herobg.png') no-repeat center center/cover;
+.bg-hero {
+    background: url("../assets/herobg.png") no-repeat center center/cover;
 }
-
 
 .gradient_text {
     background: linear-gradient(
@@ -61,6 +60,9 @@ html {
 .box_shadow {
     box-shadow: 50px 50px 50px 50px #1c99fe;
 }
+.card_shadow:hover {
+    box-shadow: 0 0px 40px hsla(270, 100%, 70%, 0.4)
+}
 .heading_font {
     font-family: "Belanosima", sans-serif;
 }
@@ -75,7 +77,8 @@ html {
 .dics_effects {
     box-shadow: -4px -4px 10px rgba(5, 8, 22, 1),
         inset -4px -4px 10px rgba(5, 8, 22, 1),
-        4px 4px 10px rgba(255, 255, 255, 0.4), inset 4px 4px 10px rgba(255, 255, 255, 0.4);
+        4px 4px 10px rgba(255, 255, 255, 0.4),
+        inset 4px 4px 10px rgba(255, 255, 255, 0.4);
 }
 .border_gradient {
     border-image: linear-gradient(to left, red, blue) 1;

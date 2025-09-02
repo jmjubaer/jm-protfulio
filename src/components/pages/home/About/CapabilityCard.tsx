@@ -6,7 +6,7 @@ type TProps = {
     image?: string;
     containerRef: RefObject<HTMLDivElement | null>;
 };
-const SkillCard = ({ style, text, image, containerRef }: TProps) => {
+const CapabilityCard = ({ style, text, image, containerRef }: TProps) => {
     return image && !text ? (
         <motion.img
             className='absolute w-15 cursor-grab'
@@ -30,4 +30,4 @@ const SkillCard = ({ style, text, image, containerRef }: TProps) => {
     );
 };
 
-export default SkillCard;
+export default CapabilityCard;
