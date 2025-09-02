@@ -19,7 +19,7 @@ const Projects = () => {
         })();
     }, []);
     return (
-        <div id='project' className=' jm_container'>
+        <div id='project' className='pt-28 jm_container'>
             <SectionTitle
                 firstHeading={"My"}
                 lastheading={"Projects"}

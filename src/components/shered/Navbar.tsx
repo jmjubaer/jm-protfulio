@@ -34,7 +34,7 @@ const Navbar = () => {
             className={`fixed z-50 top-0 left-0 w-full ${
                 scrolled ? "bg-primary" : "bg-transparent"
             }`}>
-            <nav className='flex justify-between items-center jm_container py-3'>
+            <nav className='flex justify-between items-center jm_container py-2'>
                 <Logo />
                 <div
                     className={`fixed lg:static  h-screen lg:h-auto lg:w-auto top-0 left-0 ${
