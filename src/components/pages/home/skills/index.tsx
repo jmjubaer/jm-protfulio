@@ -12,14 +12,11 @@ const SkillSection = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const [selectedCategory, setSelectedCategory] = useState("All");
     console.log(skills);
-    // const filteredSkills =
-    //     selectedCategory === "All"
-    //         ? skills
-    //         : skills.filter((skill) => skill.category === selectedCategory);
+   
     useEffect(() => {
         (async () => {
             setLoading(true);
-            const data = await getSkills();
+            const data = await getSkills(selectedCategory);
             if (data.success) {
                 setSkills(data.data);
                 setLoading(false);

@@ -1,11 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export const getSkills = async () => {
+export const getSkills = async (selectedCategory: string) => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/skills`, {
+        const url =
+            selectedCategory == "All"
+                ? `${process.env.NEXT_PUBLIC_BASE_API}/skills`
+                : `${process.env.NEXT_PUBLIC_BASE_API}/skills?category=${selectedCategory}`;
+        const res = await fetch(url, {
             next: {
                 revalidate: 1800,
             },
-            // cache: "force-cache"
+            cache: "force-cache"
         });
         const result = await res.json();
         return result;
