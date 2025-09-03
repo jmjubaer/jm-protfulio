@@ -9,6 +9,7 @@ import Projects from "@/components/pages/home/Projects";
 import AboutSection from "./About/index";
 import SkillSection from "./skills/index";
 import ExperienceSection from "./Experience";
+import CourseAndAchievement from "./CourseAndAchivement";
 
 const HomePage = () => {
     return (
@@ -22,6 +23,7 @@ const HomePage = () => {
             <Projects />
             {/* <EducationAndExperience /> */}
             <ExperienceSection />
+            <CourseAndAchievement />
             <Contact />
         </div>
     );

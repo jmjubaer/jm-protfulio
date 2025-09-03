@@ -10,7 +10,7 @@ const ShowResumeModal = () => {
     return (
         <div className=''>
             <button onClick={() => setOpen(true)} className='button_primary'>
-                Show Resume
+                VIEW MY RESUME
             </button>
             <Modal
                 className='resume-modal'
