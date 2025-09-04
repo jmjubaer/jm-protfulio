@@ -7,7 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-     const pathname = usePathname();
+    const pathname = usePathname();
     const [open, setOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     console.log(scrolled);
@@ -45,21 +45,30 @@ const Navbar = () => {
                         <li>
                             <NavLink href={"/#home"}>Home</NavLink>
                         </li>
+
                         <li>
-                            {/* <NavLink to={"#about"} className={({isActive}) => isActive ? "gradient_text" : ""}>About me</NavLink> */}
-                            <Link href='/#about'>About Me</Link>
+                            <Link
+                                className='hover:text-[#626DFF] font-medium'
+                                href='/#skills'>
+                                Skills
+                            </Link>
                         </li>
                         <li>
-                            {/* <NavLink to={"service"} className={({isActive}) => isActive ? "gradient_text" : ""}>Service</NavLink> */}
-                            <Link href='/#service'>Services</Link>
-                        </li>
-                        <li>
-                            {/* <NavLink to={"project"} className={({isActive}) => isActive ? "gradient_text" : ""}>Project</NavLink> */}
                             <NavLink href='/projects'>Projects</NavLink>
                         </li>
                         <li>
-                            {/* <NavLink to={"contact"} className={({isActive}) => isActive ? "gradient_text" : ""}>Contact Me</NavLink> */}
-                            <Link href='/#contact'>Contact Me</Link>
+                            <Link
+                                className='hover:text-[#626DFF] font-medium'
+                                href='/#experience'>
+                                Experience
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                className='hover:text-[#626DFF] font-medium'
+                                href='/#contact'>
+                                Contact Me
+                            </Link>
                         </li>
                     </ul>
                 </div>

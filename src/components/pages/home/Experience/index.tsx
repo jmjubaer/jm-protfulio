@@ -11,7 +11,7 @@ import "react-vertical-timeline-component/style.min.css";
 
 const ExperienceSection = () => {
     return (
-        <div className='pt-24 jm_container'>
+        <div className='pt-24 jm_container' id="experience">
             <SectionTitle
                 subHeading={"Explore my Industry Experience."}
                 firstHeading={"Professional "}

@@ -25,7 +25,7 @@ const SkillSection = () => {
         })();
     }, [selectedCategory]);
     return (
-        <div className='pt-28 jm_container'>
+        <div className='pt-28 jm_container' id="skills">
             <SectionTitle
                 subHeading={"Explore What can I do."}
                 firstHeading={"My"}
