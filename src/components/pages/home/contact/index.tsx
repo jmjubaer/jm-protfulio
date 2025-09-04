@@ -1,13 +1,16 @@
 "use client";
-import Lottie from "lottie-react";
-import animation from "@/assets/contact-us-animation.json";
-import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import SectionTitle from "@/components/shered/SectionTitle";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { TContact } from "@/types";
 import { sendMessage } from "@/services/sendMessage";
 import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import StarBackground from "./StarBackground";
+import { Tooltip } from "antd";
 const Contact = () => {
+    const [copied, setCopied] = useState(false);
     const {
         register,
         handleSubmit,
@@ -15,6 +18,14 @@ const Contact = () => {
         reset,
     } = useForm<TContact>();
 
+    const copyToClipboard = (text: string) => {
+        navigator.clipboard.writeText(text);
+        setCopied(true);
+
+        setTimeout(() => {
+            setCopied(false);
+        }, 2000);
+    };
     const onSubmit: SubmitHandler<TContact> = async (data) => {
         try {
             const messageBody = {
@@ -39,143 +50,157 @@ const Contact = () => {
         }
     };
 
+    useEffect(() => {
+        AOS.init({
+            offset: 100,
+            duration: 600,
+            easing: "ease-in-sine",
+            // delay: 0,
+        });
+    }, []);
     return (
-        <div id='contact' className='py-28 jm_container'>
+        <div id='contact' className='py-28 jm_container relative min-h-screen'>
+            <StarBackground />
             <SectionTitle
                 firstHeading={"Contact"}
                 lastheading={"Me"}
                 subHeading={"Contact me without any hesitation"}></SectionTitle>
             <div
-                data-aos='fade-right'
-                className='grid lg:grid-cols-2 gap-8 mt-14 items-center'>
-                <div data-aos='fade-up' className=''>
-                    <Lottie
-                        className='lg:w-3/4 mx-auto'
-                        animationData={animation}
-                        loop={true}
-                    />
-                    <div className='grid sm:grid-cols-2 gap-5'>
-                        <div
-                            data-aos='fade-right'
-                            className='text-center border-2 p-5 rounded-tr-3xl rounded-bl-3xl bg_gradient text-white flex items-center gap-3'>
-                            <FaPhoneAlt className='text-2xl ' />
-                            <p className=''>(+880) 1316467454</p>
-                        </div>
-                        <div
-                            data-aos='fade-left'
-                            className='text-center border-2 p-5 rounded-tr-3xl rounded-bl-3xl bg_gradient text-white flex items-center gap-3'>
-                            <FaEnvelope className=' text-2xl ' />
-                            <p className=''>jmjubaer3927@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-                <div data-aos='fade-left' className=''>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <div
-                            data-aos='fade-up'
-                            className='flex flex-wrap sm:flex-nowrap gap-5'>
-                            <div className='w-full'>
-                                <input
-                                    {...register("firstName", {
-                                        required: true,
-                                    })}
-                                    type='text'
-                                    className='w-full p-3 dics_effects rounded-xl px-5 outline-none'
-                                    placeholder='Enter Your First Name*'
-                                />
-                                {errors.firstName && (
-                                    <p className='text-red-500 text-sm mt-1'>
-                                        This field is required
-                                    </p>
-                                )}
-                            </div>
-                            <div className='w-full'>
-                                <input
-                                    {...register("lastName", {
-                                        required: true,
-                                    })}
-                                    type='text'
-                                    className='w-full p-3 dics_effects rounded-xl px-5 outline-none'
-                                    placeholder='Enter Your Last Name*'
-                                />
-                                {errors.lastName && (
-                                    <p className='text-red-500 text-sm mt-1'>
-                                        This field is required
-                                    </p>
-                                )}
-                            </div>
-                        </div>
-                        <div
-                            data-aos='fade-up'
-                            className='flex flex-wrap sm:flex-nowrap gap-5 mt-10'>
-                            <div className='w-full'>
-                                <input
-                                    {...register("phone", {
-                                        required: true,
-                                    })}
-                                    className='w-full p-3 dics_effects rounded-xl px-5 outline-none'
-                                    placeholder='Enter Your Number'
-                                />
-                                {errors.phone && (
-                                    <p className='text-red-500 text-sm mt-1'>
-                                        This field is required
-                                    </p>
-                                )}
-                            </div>
-                            <div className='w-full'>
-                                <input
-                                    {...register("email", {
-                                        required: true,
-                                    })}
-                                    type='email'
-                                    className='w-full p-3 dics_effects rounded-xl px-5 outline-none'
-                                    placeholder='Enter Your Email*'
-                                />
-                                {errors.email && (
-                                    <p className='text-red-500 text-sm mt-1'>
-                                        This field is required
-                                    </p>
-                                )}
-                            </div>
-                        </div>
-                        <div className=''>
+                data-aos='zoom-out'
+                className=' mt-14 w-full  max-w-[600px] mx-auto'>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <div
+                        className='flex flex-wrap sm:flex-nowrap gap-5'>
+                        <Tooltip
+                            title={copied ? "Copied!" : "Click to copy"}
+                            className=' z-50'>
+                            <button
+                                type='button'
+                                onClick={() =>
+                                    copyToClipboard("(+880) 1316467454")
+                                }
+                                className='w-full p-3 dics_effects rounded-xl px-5 text-left cursor-pointer z-10'>
+                                +8801316467454
+                            </button>
+                        </Tooltip>
+                        <Tooltip
+                            title={copied ? "Copied!" : "Click to copy"}
+                            className=' z-50'>
+                            <button
+                                type='button'
+                                onClick={() =>
+                                    copyToClipboard("jmjubaer3927@gmail.com")
+                                }
+                                className='w-full p-3 dics_effects rounded-xl px-5 text-left cursor-pointer z-10'>
+                                jmjubaer3927@gmail.com
+                            </button>
+                        </Tooltip>
+                    </div>{" "}
+
+                    <div
+                        data-aos='fade-up'
+                        className='flex flex-wrap sm:flex-nowrap gap-5 mt-10'>
+                        <div className='w-full'>
                             <input
-                                data-aos='fade-up'
-                                {...register("subject", {
+                                {...register("firstName", {
                                     required: true,
                                 })}
                                 type='text'
-                                className='w-full p-3 dics_effects rounded-xl px-5 outline-none mt-10'
-                                placeholder='Subject'
+                                className='w-full p-3 dics_effects rounded-xl px-5 outline-none'
+                                placeholder='Enter Your First Name*'
                             />
-                            {errors.subject && (
+                            {errors.firstName && (
                                 <p className='text-red-500 text-sm mt-1'>
                                     This field is required
                                 </p>
                             )}
                         </div>
-                        <div className=''>
-                            <textarea
-                                data-aos='fade-up'
-                                {...register("message", {
+                        <div className='w-full'>
+                            <input
+                                {...register("lastName", {
                                     required: true,
                                 })}
-                                className='w-full p-3 dics_effects rounded-xl px-5 outline-none mt-10 min-h-[150px]'
-                                placeholder='Massage .....'></textarea>
-                            {errors.message && (
+                                type='text'
+                                className='w-full p-3 dics_effects rounded-xl px-5 outline-none'
+                                placeholder='Enter Your Last Name*'
+                            />
+                            {errors.lastName && (
                                 <p className='text-red-500 text-sm mt-1'>
                                     This field is required
                                 </p>
                             )}
                         </div>
-                        <button
+                    </div>
+                    <div
+                        data-aos='fade-up'
+                        className='flex flex-wrap sm:flex-nowrap gap-5 mt-10'>
+                        <div className='w-full'>
+                            <input
+                                {...register("phone", {
+                                    required: true,
+                                })}
+                                className='w-full p-3 dics_effects rounded-xl px-5 outline-none'
+                                placeholder='Enter Your Number'
+                            />
+                            {errors.phone && (
+                                <p className='text-red-500 text-sm mt-1'>
+                                    This field is required
+                                </p>
+                            )}
+                        </div>
+                        <div className='w-full'>
+                            <input
+                                {...register("email", {
+                                    required: true,
+                                })}
+                                type='email'
+                                className='w-full p-3 dics_effects rounded-xl px-5 outline-none'
+                                placeholder='Enter Your Email*'
+                            />
+                            {errors.email && (
+                                <p className='text-red-500 text-sm mt-1'>
+                                    This field is required
+                                </p>
+                            )}
+                        </div>
+                    </div>
+                    <div className=''>
+                        <input
                             data-aos='fade-up'
-                            className='bg_gradient rounded-xl mt-10 mx-auto block text-white px-8 py-3 text-lg cursor-pointer'
-                            type='submit'>
-                            {isSubmitting ? "Sending" : "Send Message"}
-                        </button>
-                    </form>
-                </div>
+                            {...register("subject", {
+                                required: true,
+                            })}
+                            type='text'
+                            className='w-full p-3 dics_effects rounded-xl px-5 outline-none mt-10'
+                            placeholder='Subject'
+                        />
+                        {errors.subject && (
+                            <p className='text-red-500 text-sm mt-1'>
+                                This field is required
+                            </p>
+                        )}
+                    </div>
+                    <div className=''>
+                        <textarea
+                            data-aos='fade-up'
+                            {...register("message", {
+                                required: true,
+                            })}
+                            className='w-full p-3 dics_effects rounded-xl px-5 outline-none mt-10 min-h-[150px]'
+                            placeholder='Massage .....'></textarea>
+                        {errors.message && (
+                            <p className='text-red-500 text-sm mt-1'>
+                                This field is required
+                            </p>
+                        )}
+                    </div>
+                    <button
+                        data-aos='fade-up'
+                        className='bg_gradient rounded-xl mt-10 mx-auto block text-white px-8 py-3 text-lg cursor-pointer'
+                        type='submit'>
+                        {isSubmitting ? "Sending" : "Send Message"}
+                    </button>
+                </form>
             </div>
         </div>
     );

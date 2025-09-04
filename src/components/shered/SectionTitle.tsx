@@ -1,23 +1,13 @@
-"use client"
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
+
 type TProps = {
     subHeading: string;
     firstHeading: string;
     lastheading: string;
 };
 const SectionTitle = ({ subHeading, firstHeading, lastheading }: TProps) => {
-    useEffect(() => {
-        AOS.init({
-            offset: 100,
-            duration: 600,
-            easing: "ease-in-sine",
-            // delay: 0,
-        });
-    }, []);
+
     return (
-        <div data-aos='zoom-in' className='text-center relative'>
+        <div className='text-center relative'>
             <h2 className='text-4xl md:text-5xl font-bold'>
                 {firstHeading && firstHeading}{" "}
                 <span className='gradient_text jm_special_font'>
