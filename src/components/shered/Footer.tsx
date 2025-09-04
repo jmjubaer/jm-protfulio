@@ -14,7 +14,7 @@ import Logo from "./Logo";
 
 const Footer = () => {
     return (
-        <div className='bg-[#333] text-white overflow-hidden'>
+        <div className='bg-secondary text-white overflow-hidden'>
             <div className='grid sm:grid-cols-2 xl:grid-cols-4 gap-10 py-10 border-b-2 border_gradient jm_container'>
                 <div className='xl:col-span-2'>
                     <div className='w-fit'>
@@ -26,7 +26,7 @@ const Footer = () => {
                         technology is MongoDB, Express js, and node js.
                     </p>
                     <ul className='flex flex-wrap gap-10 mt-5'>
-                        <li className='p-3 border rounded-full '>
+                        <li className='p-3 border rounded-full dics_effects'>
                             <a
                                 target='_blank'
                                 href='https://web.facebook.com/jm.jubaerm'
@@ -34,7 +34,7 @@ const Footer = () => {
                                 <FaFacebookF className='text-lg text-[#0C83E9]' />
                             </a>
                         </li>
-                        <li className='p-3 border rounded-full '>
+                        <li className='p-3 border rounded-full dics_effects'>
                             <a
                                 target='_blank'
                                 rel='noreferrer'
@@ -42,7 +42,7 @@ const Footer = () => {
                                 <FaLinkedinIn className='text-lg text-[#0077B5]' />
                             </a>
                         </li>
-                        <li className='p-3 border rounded-full '>
+                        <li className='p-3 border rounded-full dics_effects'>
                             <a
                                 target='_blank'
                                 rel='noreferrer'
@@ -50,7 +50,7 @@ const Footer = () => {
                                 <FaGithub className='text-lg text-[#000]' />
                             </a>
                         </li>
-                        <li className='p-3 border rounded-full '>
+                        <li className='p-3 border rounded-full dics_effects'>
                             <a
                                 target='_blank'
                                 rel='noreferrer'
@@ -58,7 +58,7 @@ const Footer = () => {
                                 <FaTwitter className='text-lg text-[#1DA1F2]' />
                             </a>
                         </li>
-                        <li className='p-3 border rounded-full '>
+                        <li className='p-3 border rounded-full dics_effects'>
                             <a
                                 target='_blank'
                                 rel='noreferrer'
@@ -66,7 +66,7 @@ const Footer = () => {
                                 <FaInstagram className='text-lg text-[#B62EB1]' />
                             </a>
                         </li>
-                        <li className='p-3 border rounded-full '>
+                        <li className='p-3 border rounded-full dics_effects'>
                             <a
                                 target='_blank'
                                 rel='noreferrer'
