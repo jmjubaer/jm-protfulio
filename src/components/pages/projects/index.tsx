@@ -81,15 +81,15 @@ const Projects = ({
                         </div>
                         <hr className='text-gray-300 my-5' />
                         <div className=''>
-                            <h3 className='block font-bold text-2xl secondary_font text-primary'>
+                            <h3 className='block font-bold text-2xl secondary_font text-white'>
                                 Technology
                             </h3>
                             <ul className='block w-full list-disc px-3 py-2 text-gray-600 rounded-3xl'>
                                 <li
                                     className={`flex border-t border-gray-300 py-2 items-center cursor-pointer gap-2 font-medium  ${
                                         technology === ""
-                                            ? "text-primary/70"
-                                            : ""
+                                            ? "gradient_text"
+                                            : "text-white/80"
                                     }`}
                                     onClick={() => setTechnology("")}
                                     value=''>
@@ -106,9 +106,10 @@ const Projects = ({
                                     <li
                                         key={skill?.title}
                                         className={`flex items-center border-t border-gray-300 py-2 cursor-pointer gap-3 font-medium ${
-                                            technology === ""
-                                                ? "text-primary/70"
-                                                : ""
+                                            technology === skill?.title
+                                                ? "gradient_text"
+                                                : "text-white/70"
+                                              
                                         }`}
                                         onClick={() =>
                                             setTechnology(skill?.title)

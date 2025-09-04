@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export const getSkills = async (selectedCategory: string) => {
+export const getSkills = async (selectedCategory?: string) => {
     try {
         const url =
             selectedCategory == "All"
