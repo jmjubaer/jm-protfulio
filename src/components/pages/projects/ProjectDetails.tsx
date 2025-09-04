@@ -27,7 +27,7 @@ import ChallengeAndPlanTab from "./ChallengeAndPlanTab";
 
 const ProjectDetails = ({ project }: { project: TProject }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
-    console.log(project);
+
     const items: TabsProps["items"] = [
         {
             key: "1",
@@ -124,13 +124,14 @@ const ProjectDetails = ({ project }: { project: TProject }) => {
                     </div>
                 </div>
             </div>
-            <div className='border-t border-gray-300 mt-8 pt-5'>
+            <div className='border-t text-white border-gray-300 mt-8 pt-5'>
                 <Tabs
                     defaultActiveKey='1'
                     items={items}
                     // onChange={onChange}
                 />
             </div>
+            {/* Link  section */}
             <div className='flex flex-wrap md:flex-nowrap gap-5 justify-between mt-10'>
                 <a
                     className='button_primary w-full text-center'

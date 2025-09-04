@@ -4,14 +4,14 @@ type TProps = {
 };
 const DescriptionTab = ({ description, duration }: TProps) => {
     return (
-        <div>
+        <div className="">
             <div className=''>
-                <h2 className='text-xl font-semibold'>Project Description </h2>
-                <p className=' mt-3 sm:ml-7'>{description}</p>
+                <h2 className='text-xl font-semibold text-white'>Project Description </h2>
+                <p className=' mt-3 sm:ml-7 text-white/80'>{description}</p>
             </div>{" "}
-            <div className='flex gap-5 my-5'>
+            <div className='flex gap-5 my-5 text-white'>
                 <h2 className='text-xl font-semibold'>Project duration: </h2>
-                <p className='font-bold text-2xl '>{duration}</p>
+                <p className='font-bold text-2xl text-white/80'>{duration}</p>
             </div>
         </div>
     );
