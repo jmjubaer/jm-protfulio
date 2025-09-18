@@ -4,7 +4,7 @@ type TProps = {
 const Button = ({ children }: TProps) => {
     return (
         <div>
-            <button className='px-7 py-3 bg-gradient-to-r to-[#1C99FE] via-[#7644FF] from-[#FD4766] uppercase text-white rounded-md cursor-pointer'>
+            <button className=' button_primary'>
                 {children}
             </button>
         </div>

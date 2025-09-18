@@ -20,7 +20,7 @@ import { FlipWords } from "./FlipWord";
 const Banner = () => {
     return (
         <div id='home' className='pt-8 bg-hero'>
-            <div className='grid md:grid-cols-3 gap-5 justify-between items-center min-h-screen jm_container '>
+            <div className='grid md:grid-cols-3 gap-5 justify-between items-center min-h-screen jm_container py-10 md:py-0'>
                 <div className='md:col-span-2 order-2 md:order-1'>
                     <h1 className='text-3xl mb-5 heading_font font-semibold'>
                         Hi, I am{" "}
@@ -72,7 +72,7 @@ const Banner = () => {
                         ]}
                         className='text-3xl md:text-4xl lg:text-7xl font-semibold  text-white mt-5 gradient_text'
                     />
-                    <ul className='flex flex-wrap justify-center sm:justify-normal gap-10 mt-5'>
+                    <ul className='flex flex-wrap justify-center sm:justify-normal gap-5 sm:gap-7 md:gap-10 mt-5'>
                         <li className='p-3 rounded-full dics_effects'>
                             <a
                                 target='_blank'
@@ -122,17 +122,17 @@ const Banner = () => {
                             </a>
                         </li>
                     </ul>
-                    <div className='flex flex-wrap gap-8 mt-8'>
+                    <div className='flex flex-wrap md:gap-8 gap-2 sm:gap-3 justify-between md:justify-start mt-8'>
                         <Button>
                             <a href='/Resume.pdf' download={true}>
-                                Download my resume
+                                Download resume
                             </a>
                         </Button>
                         <ShowResumeModal />
                     </div>
                 </div>
 
-                <Image className='order-1 md:order-3' src={newImage} alt='' />
+                <Image className='order-1 md:order-3 hidden md:block' src={newImage} alt='' />
             </div>
         </div>
     );
