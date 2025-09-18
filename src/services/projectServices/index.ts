@@ -17,7 +17,8 @@ export const getAllProjects = async (queryParams?: TQueryParam[]) => {
         const res = await fetch(fullUrl, {
             next: {
                 revalidate: 1800
-            }
+            },
+            // cache: "only-if-cached"
             
         });
         const result = await res.json();

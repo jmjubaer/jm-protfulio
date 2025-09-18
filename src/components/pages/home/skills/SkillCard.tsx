@@ -2,7 +2,7 @@ import { TSkill } from "@/types/skill.type";
 import { Tooltip } from "antd";
 import Image from "next/image";
 import CountUp from "react-countup";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 const SkillCard = ({ skill, index }: { skill: TSkill; index: number }) => {
     return (
         <Tilt className='xs:w-[250px] w-full'>

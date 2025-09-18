@@ -57,7 +57,7 @@ const Projects = ({
         }
     }, [technology, page, searchTerm]);
     return (
-        <div className='jm_container '>
+        <div className='jm_container bg-primary'>
             <Layout>
                 {/* Filter and search section */}
                 <Sider
@@ -134,7 +134,7 @@ const Projects = ({
                     <div
                         ref={contentRef}
                         style={{ scrollbarWidth: "none" }}
-                        className=' h-[calc(100vh-30px)] overflow-auto bg-primary lg:p-5 pr-0'>
+                        className=' h-[calc(100vh-10px)] overflow-auto pt-14 bg-primary lg:p-5 pr-0'>
                         <Spin spinning={loading} tip='Loading...' size='large'>
                             {/* Product section */}
                             <div className='mb-5'>

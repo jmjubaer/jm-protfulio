@@ -131,3 +131,7 @@ html {
         width: 95% !important;
     }
 }
+.ant-layout {
+ 
+    background: transparent !important;
+}

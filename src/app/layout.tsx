@@ -34,7 +34,7 @@ export default function RootLayout({
                 className={`${rubik_Moonrocks.className} ${belanosima.className} ${poppins.className} antialiased bg-primary text-[#E5E6E7] overflow-x-hidden`}>
                 <Navbar />
                 <div className='min-h-screen bg-primary'>{children}</div>
-                <Footer/>
+                <Footer />
             </body>
         </html>
     );
