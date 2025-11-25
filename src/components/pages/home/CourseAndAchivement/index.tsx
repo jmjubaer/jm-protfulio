@@ -87,12 +87,12 @@ const CourseAndAchievement = () => {
                     "My learning and achievement journey"
                 }></SectionTitle>
 
-            <div className='grid grid-cols-2 gap-7'>
+            <div className='grid md:grid-cols-2 gap-7 mt-14'>
                 {courseData?.map((course) => (
                     <div
                     data-aos='zoom-in'
                         key={course.id}
-                        className='bg-secondary/50 p-7 rounded-lg flex flex-col justify-between gap-4 mt-14'>
+                        className='bg-secondary/50 sm:p-7 p-4 rounded-lg flex flex-col justify-between gap-4 '>
                         <div className='flex items-center gap-4'>
                             <a href={course.providerLink} target='_blank'>
                                 <Image
@@ -141,7 +141,7 @@ const CourseAndAchievement = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className='grid grid-cols-2 gap-4 mt-2'>
+                        <div className='grid lg:grid-cols-2 gap-4 mt-2'>
                             <ViewCertificate
                                 certificate={course?.certificate}
                                 title={course?.title}
@@ -149,7 +149,7 @@ const CourseAndAchievement = () => {
                             <a
                                 target='_blank'
                                 href={course?.courseLink}
-                                className='button bg-primary/50 flex items-center  gap-3'>
+                                className='button bg-primary/50 flex items-center justify-center gap-3'>
                                 {" "}
                                 <TbExternalLink /> Course Link
                             </a>
