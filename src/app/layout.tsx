@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Belanosima, Poppins, Rubik_Moonrocks } from "next/font/google";
-import "./globals.css";
+import "./globals.css"; 
 import Navbar from "@/components/shered/Navbar";
 import Footer from "@/components/shered/Footer";
 

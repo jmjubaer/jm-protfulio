@@ -6,13 +6,13 @@ import vector from "@/assets/flat_my_image.png";
 import Image from "next/image";
 const AboutSection = () => {
     const grid2Container = useRef<HTMLDivElement>(null);
-
+    const isSmall = typeof window !== "undefined" && window.innerWidth < 640;
     return (
         <section className='jm_container' id='about'>
             <h2 className='text-4xl font-semibold'>About Me</h2>
-            <div className='grid grid-cols-2 gap-4 mt-5 h-screen'>
+            <div className='grid lg:grid-cols-2 gap-4 mt-5 lg:h-screen'>
                 {/* Grid 1 */}
-                <div className=' relative bg-[#2A2C4C]/50 row-span-2 rounded-2xl p-4 overflow-hidden flex flex-col justify-between '>
+                <div className=' relative bg-[#2A2C4C]/50 row-span-1 lg:row-span-2 rounded-2xl p-4 overflow-hidden flex flex-col justify-between '>
                     <Image
                         src={vector}
                         alt='vector'
@@ -36,7 +36,7 @@ const AboutSection = () => {
                     </div>
                 </div>
                 {/* Grid 2 */}
-                <div className='bg-[#2A2C4C]/50 w-full relative overflow-hidden rounded-2xl'>
+                <div className='bg-[#2A2C4C]/50 w-full sm:min-h-[300px] min-h-56 lg:min-h-full relative overflow-hidden rounded-2xl'>
                     <div
                         ref={grid2Container}
                         className='flex items-center justify-center w-full h-full relative'>
@@ -48,6 +48,9 @@ const AboutSection = () => {
                                 rotate: "75deg",
                                 top: "30%",
                                 left: "20%",
+                                width: isSmall ? "130px" : "170px",
+                                fontSize: isSmall ? "14px" : "20px",
+                                padding: isSmall ? "10px" : "12px",
                             }}
                             text='MERN Stack'
                             containerRef={grid2Container}
@@ -57,6 +60,8 @@ const AboutSection = () => {
                                 rotate: "-30deg",
                                 top: "60%",
                                 left: "45%",
+                                width: isSmall ? "140px" : "170px",
+                                fontSize: isSmall ? "15px" : "20px",        padding: isSmall ? "10px" : "12px",
                             }}
                             text='NEXT JS'
                             containerRef={grid2Container}
@@ -66,6 +71,8 @@ const AboutSection = () => {
                                 rotate: "90deg",
                                 bottom: "30%",
                                 right: "-8%",
+                                width: isSmall ? "140px" : "170px",
+                                fontSize: isSmall ? "15px" : "20px",        padding: isSmall ? "10px" : "12px",
                             }}
                             text='Front End'
                             containerRef={grid2Container}
@@ -75,6 +82,8 @@ const AboutSection = () => {
                                 rotate: "-45deg",
                                 top: "55%",
                                 left: "0%",
+                                width: isSmall ? "140px" : "170px",
+                                fontSize: isSmall ? "15px" : "20px",        padding: isSmall ? "10px" : "12px",
                             }}
                             text='Back End'
                             containerRef={grid2Container}
@@ -84,6 +93,8 @@ const AboutSection = () => {
                                 rotate: "20deg",
                                 top: "10%",
                                 left: "38%",
+                                width: isSmall ? "140px" : "170px",
+                                fontSize: isSmall ? "15px" : "20px",        padding: isSmall ? "10px" : "12px",
                             }}
                             text='Full Stack'
                             containerRef={grid2Container}
@@ -93,6 +104,7 @@ const AboutSection = () => {
                                 rotate: "30deg",
                                 top: "70%",
                                 left: "70%",
+                                width: isSmall ? "50px" : "70px",
                             }}
                             image='assets/node.png'
                             containerRef={grid2Container}
@@ -102,6 +114,7 @@ const AboutSection = () => {
                                 rotate: "-45deg",
                                 top: "70%",
                                 left: "25%",
+                                    width: isSmall ? "40px" : "60px",
                             }}
                             image='assets/javascript.png'
                             containerRef={grid2Container}
@@ -111,7 +124,7 @@ const AboutSection = () => {
                                 rotate: "-45deg",
                                 top: "5%",
                                 right: "10%",
-                                width: "120px",
+                                    width: isSmall ? "90px" : "130px",
                             }}
                             image='assets/mongodb.png'
                             containerRef={grid2Container}
@@ -121,7 +134,7 @@ const AboutSection = () => {
                                 rotate: "0deg",
                                 top: "5%",
                                 left: "0%",
-                                width: "200px",
+                                    width: isSmall ? "140px" : "200px",
                             }}
                             image='assets/mongoose.png'
                             containerRef={grid2Container}
@@ -129,7 +142,7 @@ const AboutSection = () => {
                     </div>
                 </div>
                 {/* Grid 5 */}
-                <div className='bg-[#2A2C4C]/80 w-full relative overflow-hidden rounded-2xl'>
+                <div className='bg-[#2A2C4C]/80 w-full sm:min-h-[300px] min-h-56 lg:min-h-full relative overflow-hidden rounded-2xl'>
                     <div className='flex flex-col items-center justify-center gap-4 size-full'>
                         <p className='text-center text-xl font-medium'>
                             Do you want to start a project together?
