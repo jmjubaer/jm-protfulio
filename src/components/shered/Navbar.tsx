@@ -39,7 +39,7 @@ const Navbar = () => {
                 <div
                     className={`fixed lg:static  h-screen lg:h-auto lg:w-auto top-0 left-0 ${
                         open ? "w-4/5 bg-primary" : "w-0 overflow-hidden"
-                    } transition-all ease-linear duration-700 pt-20`}>
+                    } transition-all ease-linear duration-700 pt-20 lg:pt-0`}>
                     <ul
                         className={`flex flex-col m-10 lg:m-0 lg:flex-row gap-4 text-lg `}>
                         <li onClick={() => setOpen(false)}>
