@@ -38,34 +38,34 @@ const Navbar = () => {
                 <Logo />
                 <div
                     className={`fixed lg:static  h-screen lg:h-auto lg:w-auto top-0 left-0 ${
-                        open ? "w-4/5" : "w-0 overflow-hidden"
-                    } transition-all ease-linear duration-500`}>
+                        open ? "w-4/5 bg-primary" : "w-0 overflow-hidden"
+                    } transition-all ease-linear duration-700 pt-20`}>
                     <ul
-                        className={`flex flex-col m-10 lg:m-0 lg:flex-row gap-4 text-lg`}>
-                        <li>
-                            <NavLink href={"/#home"}>Home</NavLink>
+                        className={`flex flex-col m-10 lg:m-0 lg:flex-row gap-4 text-lg `}>
+                        <li onClick={() => setOpen(false)}>
+                            <NavLink  href={"/#home"}>Home</NavLink>
                         </li>
 
-                        <li>
+                        <li onClick={() => setOpen(false)}>
                             <Link
                                 className='hover:text-[#626DFF] font-medium'
                                 href='/#skills'>
                                 Skills
                             </Link>
                         </li>
-                        <li>
+                        <li onClick={() => setOpen(false)}>
                             <NavLink href='/projects'>Projects</NavLink>
                         </li>
-                        <li>
+                        <li onClick={() => setOpen(false)}>
                             <Link
                                 className='hover:text-[#626DFF] font-medium'
                                 href='/#experience'>
                                 Experience
                             </Link>
                         </li>
-                        <li>
+                        <li onClick={() => setOpen(false)}>
                             <Link
-                                className='hover:text-[#626DFF] font-medium'
+                                className='hover:text-[#626DFF] font-medium text-nowrap whitespace-nowrap'
                                 href='/#contact'>
                                 Contact Me
                             </Link>
