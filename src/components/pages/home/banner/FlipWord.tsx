@@ -53,7 +53,7 @@ export const FlipWords = ({ words, duration = 3000, className }: TProps) => {
                     position: "absolute",
                 }}
                 className={twMerge(
-                    "z-10 inline-block relative text-left",
+                    "z-10 inline-block gradient_text relative text-left",
                     className
                 )}
                 
@@ -68,7 +68,7 @@ export const FlipWords = ({ words, duration = 3000, className }: TProps) => {
                             delay: wordIndex * 0.3,
                             duration: 0.3,
                         }}
-                        className='inline-block whitespace-nowrap'>
+                        className='inline-block linear-gradient(to right, #9333ea, #db2777, #2563eb) whitespace-nowrap'>
                         {word.split("").map((letter, letterIndex) => (
                             <motion.span
                                 key={word + letterIndex}
@@ -86,7 +86,7 @@ export const FlipWords = ({ words, duration = 3000, className }: TProps) => {
                                     delay: wordIndex * 0.3 + letterIndex * 0.05,
                                     duration: 0.2,
                                 }}
-                                className='inline-block gradient_text'>
+                                className='inline-block gradient_text-top'>
                                 {letter}
                             </motion.span>
                         ))}

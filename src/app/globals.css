@@ -4,7 +4,7 @@ html {
 @import "tailwindcss";
 
 @theme inline {
-    --color-background: var(--background);
+    --color-primary-text: var(--background);
     --color-foreground: var(--foreground);
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
@@ -41,14 +41,24 @@ html {
 .bg-hero {
     background: url("../assets/herobg.png") no-repeat center center/cover;
 }
-
-.gradient_text {
-    background: linear-gradient(
+/* linear-gradient(
         123deg,
         #1c99fe 20.69%,
         #7644ff 50.19%,
         #fd4766 79.69%
-    );
+    ) */
+/* linear-gradient(
+      #13FDFD,#139AFD
+    ) */
+.gradient_text {
+    background: linear-gradient(to left, #13fdfd, #139afd);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+.gradient_text-top {
+    background: linear-gradient(to bottom, #13fdfd, #139afd);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -61,7 +71,7 @@ html {
     box-shadow: 50px 50px 50px 50px #1c99fe;
 }
 .card_shadow:hover {
-    box-shadow: 0 0px 40px hsla(270, 100%, 70%, 0.4)
+    box-shadow: 0 0px 40px hsla(270, 100%, 70%, 0.4);
 }
 .heading_font {
     font-family: "Belanosima", sans-serif;
@@ -81,15 +91,10 @@ html {
         inset 4px 4px 10px rgba(255, 255, 255, 0.4);
 }
 .border_gradient {
-    border-image: linear-gradient(to left, red, blue) 1;
+    border-image: linear-gradient(to top left, #13fdfd, #050816, #139afd) 10;
 }
 .bg_gradient {
-    background: linear-gradient(
-        -30deg,
-        #1c99fe 20.69%,
-        #7644ff 50.19%,
-        #fd4766 79.69%
-    );
+    background: linear-gradient(to left, #13fdfd, #139afd);
 }
 .jm_child {
     transition: all 5s ease-in-out;
@@ -109,10 +114,11 @@ html {
     font-size: 16px !important;
     font-weight: 700 !important;
 }
+
 .button_primary {
-    @apply sm:px-5 px-4 md:px-7 py-2 md:py-3 bg-gradient-to-r to-[#1C99FE] via-[#7644FF] from-[#FD4766] text-sm sm:text-base text-white rounded-md cursor-pointer uppercase;
+    @apply sm:px-5 px-4 md:px-7 py-2 md:py-3 bg-linear-to-tr from-[#139afd]  via-primary  to-[#13fdfd] text-sm sm:text-base text-white rounded-full cursor-pointer border border-[#13fdfd] uppercase;
 }
-.button{
+.button {
     @apply text-center px-5 py-3  text-white rounded-md cursor-pointer;
 }
 .resume-modal {
@@ -132,6 +138,5 @@ html {
     }
 }
 .ant-layout {
- 
     background: transparent !important;
 }

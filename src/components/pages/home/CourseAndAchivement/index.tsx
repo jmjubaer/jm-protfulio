@@ -90,7 +90,7 @@ const CourseAndAchievement = () => {
             <div className='grid md:grid-cols-2 gap-7 mt-14'>
                 {courseData?.map((course) => (
                     <div
-                    data-aos='zoom-in'
+                        data-aos='zoom-in'
                         key={course.id}
                         className='bg-secondary/50 sm:p-7 p-4 rounded-lg flex flex-col justify-between gap-4 '>
                         <div className='flex items-center gap-4'>
