@@ -85,13 +85,26 @@ html {
         4px 4px 10px rgba(0, 0, 0, 0.1), inset 4px 4px 10px rgba(0, 0, 0, 0.1);
 } */
 .dics_effects {
-    box-shadow: -4px -4px 10px rgba(5, 8, 22, 1),
-        inset -4px -4px 10px rgba(5, 8, 22, 1),
-        4px 4px 10px rgba(255, 255, 255, 0.4),
-        inset 4px 4px 10px rgba(255, 255, 255, 0.4);
+    box-shadow: -4px -4px 20px 1px rgba(19, 253, 253, 0.5),
+        inset -4px -4px 10px rgba(255, 255, 255, 0.2),
+        4px 4px 10px rgba(19, 253, 253, 0.5),
+        inset 4px 4px 10px rgba(255, 253, 255, 0.3);
+}
+
+.disc_effects_input {
+    box-shadow: -4px -4px 10px -5px rgba(19, 253, 253, 1),
+        inset -4px -4px 10px rgba(255, 255, 255, 0.2),
+        4px 4px 20px -5px rgba(19, 253, 253, 0.8),
+        inset 4px 4px 10px rgba(255, 253, 255, 0.3);
 }
 .border_gradient {
-    border-image: linear-gradient(to top left, #13fdfd, #050816, #139afd) 10;
+    border-image: linear-gradient(
+            to top left,
+            rgb(19, 253, 253),
+            #050816,
+            rgb(19, 154, 253)
+        )
+        10;
 }
 .bg_gradient {
     background: linear-gradient(to left, #13fdfd, #139afd);

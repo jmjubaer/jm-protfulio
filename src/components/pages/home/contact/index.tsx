@@ -79,7 +79,7 @@ const Contact = () => {
                                 onClick={() =>
                                     copyToClipboard("(+880) 1316467454")
                                 }
-                                className='w-full p-3 dics_effects rounded-xl px-5 text-left cursor-pointer z-10'>
+                                className='w-full p-3 disc_effects_input rounded-xl px-5 text-left cursor-pointer z-10 bg-primary'>
                                 +8801316467454
                             </button>
                         </Tooltip>
@@ -91,7 +91,7 @@ const Contact = () => {
                                 onClick={() =>
                                     copyToClipboard("jmjubaer3927@gmail.com")
                                 }
-                                className='w-full p-3 dics_effects rounded-xl px-5 text-left cursor-pointer z-10'>
+                                className='w-full p-3 disc_effects_input rounded-xl px-5 text-left cursor-pointer z-10 bg-primary'>
                                 jmjubaer3927@gmail.com
                             </button>
                         </Tooltip>
@@ -106,7 +106,7 @@ const Contact = () => {
                                     required: true,
                                 })}
                                 type='text'
-                                className='w-full p-3 dics_effects rounded-xl px-5 outline-none'
+                                className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none bg-primary'
                                 placeholder='Enter Your First Name*'
                             />
                             {errors.firstName && (
@@ -121,7 +121,7 @@ const Contact = () => {
                                     required: true,
                                 })}
                                 type='text'
-                                className='w-full p-3 dics_effects rounded-xl px-5 outline-none'
+                                className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none bg-primary'
                                 placeholder='Enter Your Last Name*'
                             />
                             {errors.lastName && (
@@ -139,7 +139,7 @@ const Contact = () => {
                                 {...register("phone", {
                                     required: true,
                                 })}
-                                className='w-full p-3 dics_effects rounded-xl px-5 outline-none'
+                                className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none bg-primary'
                                 placeholder='Enter Your Number'
                             />
                             {errors.phone && (
@@ -154,7 +154,7 @@ const Contact = () => {
                                     required: true,
                                 })}
                                 type='email'
-                                className='w-full p-3 dics_effects rounded-xl px-5 outline-none'
+                                className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none bg-primary'
                                 placeholder='Enter Your Email*'
                             />
                             {errors.email && (
@@ -171,7 +171,7 @@ const Contact = () => {
                                 required: true,
                             })}
                             type='text'
-                            className='w-full p-3 dics_effects rounded-xl px-5 outline-none mt-10'
+                            className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none mt-10 bg-primary'
                             placeholder='Subject'
                         />
                         {errors.subject && (
@@ -186,7 +186,7 @@ const Contact = () => {
                             {...register("message", {
                                 required: true,
                             })}
-                            className='w-full p-3 dics_effects rounded-xl px-5 outline-none mt-10 min-h-[150px]'
+                            className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none mt-10 min-h-[150px] bg-primary'
                             placeholder='Massage .....'></textarea>
                         {errors.message && (
                             <p className='text-red-500 text-sm mt-1'>
