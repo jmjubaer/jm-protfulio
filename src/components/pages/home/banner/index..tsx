@@ -1,9 +1,6 @@
 "use client";
 // import { TypeAnimation } from "react-type-animation";
-// import bg from "@/assets/my-image.png";
-// import newImage from "@/assets/new.jpeg";
-// import newImage from "@/assets/IMG_20250510_130850.jpg";
-import newImage from "@/assets/my-vector.png";
+import newImage from "@/assets/my-image.png";
 
 import {
     FaFacebookF,
@@ -23,8 +20,9 @@ const Banner = () => {
             <div className='grid md:grid-cols-3 gap-5 justify-between items-center min-h-screen jm_container py-10 md:py-0'>
                 <div className='md:col-span-2 order-2 md:order-1'>
                     <h1 className='text-3xl mb-5 heading_font font-semibold'>
-                        Hi, I am{" "}
-                        <span className='gradient_text jm_special_font'>
+                        Hi, 
+                        I am{" "}
+                        <span className='gradient_text'>
                             Jubaer
                         </span>
                         ,
