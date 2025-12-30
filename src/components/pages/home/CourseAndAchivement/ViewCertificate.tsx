@@ -11,7 +11,7 @@ const ViewCertificate = ({ certificate,title }: { certificate: string,title:stri
         <div className=''>
             <button
                 onClick={() => setOpen(true)}
-                className='button flex items-center gap-3 justify-center bg-gradient-to-r to-[#1C99FE] via-[#7644FF] from-[#FD4766] w-full'>
+                className='button rounded-2xl flex items-center gap-3 justify-center bg-linear-to-tr from-[#139afd]  via-primary  to-[#13fdfd] border border-[#13fdfd] w-full'>
                 {" "}
                 <SlBadge /> View Certificate
             </button>

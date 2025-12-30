@@ -96,6 +96,7 @@ html {
         inset -4px -4px 10px rgba(255, 255, 255, 0.2),
         4px 4px 20px -5px rgba(19, 253, 253, 0.8),
         inset 4px 4px 10px rgba(255, 253, 255, 0.3);
+        border: 1px solid rgba(19, 253, 253, 1);
 }
 .border_gradient {
     border-image: linear-gradient(
@@ -129,7 +130,7 @@ html {
 }
 
 .button_primary {
-    @apply sm:px-5 px-4 md:px-7 py-2 md:py-3 bg-linear-to-tr from-[#139afd]  via-primary  to-[#13fdfd] text-sm sm:text-base text-white rounded-full cursor-pointer border border-[#13fdfd] uppercase;
+    @apply sm:px-5 px-4 md:px-7 py-2 md:py-3 bg-linear-to-tr from-[#139afd]  via-primary  to-[#13fdfd] border border-[#13fdfd] text-sm sm:text-base text-white rounded-full cursor-pointer uppercase;
 }
 .button {
     @apply text-center px-5 py-3  text-white rounded-md cursor-pointer;

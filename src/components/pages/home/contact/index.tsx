@@ -66,8 +66,8 @@ const Contact = () => {
                 lastheading={"Me"}
                 subHeading={"Contact me without any hesitation"}></SectionTitle>
             <div
-                data-aos='zoom-out'
-                className=' mt-14 w-full  max-w-[600px] mx-auto'>
+                // data-aos='zoom-out'
+                className=' mt-14 w-full  max-w-[600px] mx-auto '>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div
                         className='flex flex-wrap sm:flex-nowrap gap-5'>
@@ -79,7 +79,7 @@ const Contact = () => {
                                 onClick={() =>
                                     copyToClipboard("(+880) 1316467454")
                                 }
-                                className='w-full p-3 disc_effects_input rounded-xl px-5 text-left cursor-pointer z-10 bg-primary'>
+                                className='w-full p-3 disc_effects_input rounded-xl px-5 text-left cursor-pointer z-10 bg-black text-white'>
                                 +8801316467454
                             </button>
                         </Tooltip>
@@ -91,7 +91,7 @@ const Contact = () => {
                                 onClick={() =>
                                     copyToClipboard("jmjubaer3927@gmail.com")
                                 }
-                                className='w-full p-3 disc_effects_input rounded-xl px-5 text-left cursor-pointer z-10 bg-primary'>
+                                className='w-full p-3 disc_effects_input rounded-xl px-5 text-left cursor-pointer z-10 bg-black text-white'>
                                 jmjubaer3927@gmail.com
                             </button>
                         </Tooltip>
@@ -106,7 +106,7 @@ const Contact = () => {
                                     required: true,
                                 })}
                                 type='text'
-                                className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none bg-primary'
+                                className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none bg-black text-white placeholder:text-white/50'
                                 placeholder='Enter Your First Name*'
                             />
                             {errors.firstName && (
@@ -121,7 +121,7 @@ const Contact = () => {
                                     required: true,
                                 })}
                                 type='text'
-                                className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none bg-primary'
+                                className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none bg-black text-white placeholder:text-white/50'
                                 placeholder='Enter Your Last Name*'
                             />
                             {errors.lastName && (
@@ -139,7 +139,7 @@ const Contact = () => {
                                 {...register("phone", {
                                     required: true,
                                 })}
-                                className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none bg-primary'
+                                className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none bg-black text-white placeholder:text-white/50'
                                 placeholder='Enter Your Number'
                             />
                             {errors.phone && (
@@ -154,7 +154,7 @@ const Contact = () => {
                                     required: true,
                                 })}
                                 type='email'
-                                className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none bg-primary'
+                                className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none bg-black text-white placeholder:text-white/50'
                                 placeholder='Enter Your Email*'
                             />
                             {errors.email && (
@@ -171,7 +171,7 @@ const Contact = () => {
                                 required: true,
                             })}
                             type='text'
-                            className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none mt-10 bg-primary'
+                            className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none mt-10 bg-black text-white placeholder:text-white/50'
                             placeholder='Subject'
                         />
                         {errors.subject && (
@@ -186,7 +186,7 @@ const Contact = () => {
                             {...register("message", {
                                 required: true,
                             })}
-                            className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none mt-10 min-h-[150px] bg-primary'
+                            className='w-full p-3 disc_effects_input rounded-xl px-5 outline-none mt-10 min-h-[150px] bg-black text-white placeholder:text-white/50'
                             placeholder='Massage .....'></textarea>
                         {errors.message && (
                             <p className='text-red-500 text-sm mt-1'>
