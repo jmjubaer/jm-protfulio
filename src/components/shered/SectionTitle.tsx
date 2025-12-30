@@ -10,7 +10,7 @@ const SectionTitle = ({ subHeading, firstHeading, lastheading }: TProps) => {
         <div className='text-center relative'>
             <h2 className='text-4xl md:text-5xl font-bold'>
                 {firstHeading && firstHeading}{" "}
-                <span className='gradient_text jm_special_font'>
+                <span className='gradient_text'>
                     {lastheading}
                 </span>
             </h2>

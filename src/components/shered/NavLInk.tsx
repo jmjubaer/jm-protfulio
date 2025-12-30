@@ -14,8 +14,8 @@ const NavLink = ({ href, children }: IProps) => {
             href={href}
             className={
                 isActive
-                    ? "gradient_text font-bold"
-                    : "text-white hover:text-[#626DFF] transition-colors font-medium"
+                    ? "gradient_text font-bold "
+                    : "text-white hover:text-[#13fdfd] transition-colors font-medium"
             }>
             {children}
         </Link>

@@ -48,7 +48,7 @@ const Navbar = () => {
 
                         <li onClick={() => setOpen(false)}>
                             <Link
-                                className='hover:text-[#626DFF] font-medium'
+                                className='hover:text-[#13fdfd] font-medium'
                                 href='/#skills'>
                                 Skills
                             </Link>
@@ -58,14 +58,14 @@ const Navbar = () => {
                         </li>
                         <li onClick={() => setOpen(false)}>
                             <Link
-                                className='hover:text-[#626DFF] font-medium'
+                                className='hover:text-[#13fdfd] font-medium'
                                 href='/#experience'>
                                 Experience
                             </Link>
                         </li>
                         <li onClick={() => setOpen(false)}>
                             <Link
-                                className='hover:text-[#626DFF] font-medium text-nowrap whitespace-nowrap'
+                                className='hover:text-[#13fdfd] font-medium text-nowrap whitespace-nowrap'
                                 href='/#contact'>
                                 Contact Me
                             </Link>
