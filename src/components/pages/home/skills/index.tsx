@@ -38,7 +38,7 @@ const SkillSection = () => {
                         onClick={() => setSelectedCategory(category)}
                         className={`px-7 py-2.5 rounded-full font-medium uppercase cursor-pointer transition-all duration-300  ${
                             selectedCategory === category
-                                ? " bg-gradient-to-r to-[#1C99FE] via-[#7644FF] from-[#FD4766] "
+                                ? " button_primary "
                                 : "bg-[#2A2C4C]/50 text-white/50"
                         }`}
                         // style={{ animationDelay: `${index * 0.1}s` }}

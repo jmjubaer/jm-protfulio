@@ -5,9 +5,10 @@ import CountUp from "react-countup";
 import Tilt from "react-parallax-tilt";
 const SkillCard = ({ skill, index }: { skill: TSkill; index: number }) => {
     return (
-        <Tilt className='xs:w-[250px] w-full'>
+        <Tilt
+            className='xs:w-[250px] w-full group overflow-hidden rounded-2xl p-px bg-linear-to-tl hover:from-transparent hover:to-transparent from-[#139afd] via-primary to-[#13fdfd]'>
             <div
-                className={`skill-card relative overflow-hidden group cursor-pointer transform transition-all duration-700 p-5 rounded-2xl card_shadow bg-[#2A2C4C]/40`}
+                className={`skill-card relative overflow-hidden cursor-pointer transform transition-all duration-500 p-5 rounded-2xl card_shadow bg-linear-to-tr from-[#139afd]/50  via-primary  to-[#13fdfd]/5 group-hover:from-transparent group-hover:to-transparent`}
                 style={
                     {
                         animationDelay: `${index * 0.1}s`,
