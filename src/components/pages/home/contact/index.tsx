@@ -196,7 +196,7 @@ const Contact = () => {
                     </div>
                     <button
                         data-aos='fade-up'
-                        className='bg_gradient rounded-xl mt-10 mx-auto block text-white px-8 py-3 text-lg cursor-pointer'
+                        className='button_primary rounded-xl mt-10 mx-auto block text-white px-8 py-3 text-lg cursor-pointer'
                         type='submit'>
                         {isSubmitting ? "Sending" : "Send Message"}
                     </button>
